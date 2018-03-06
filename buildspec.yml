@@ -1,0 +1,14 @@
+version: 0.2
+
+env:
+  variables:
+    BTS_WEBSOCKET: "ws://localhost:8900"
+
+phases:
+  install:
+    commands:
+      - npm install
+      - npm run build
+  build:
+    commands:
+      - npm test
