@@ -29,13 +29,9 @@ class CryptoBridgeGateway extends React.Component {
     }
 
     _getActiveCoin(props, state) {
-        state.action = 'deposit';
-        let cachedCoin = props.viewSettings.get(`activeCoin_${props.provider}_${state.action}`, null);
+        let cachedCoin = props.viewSettings.get(`activeCoin_${props.provider}`, null);
 		let firstTimeCoin = null;
-		if ((props.provider == 'cryptobridge') && (state.action == 'deposit')) {
-			firstTimeCoin = 'BCO';
-		}
-		if ((props.provider == 'cryptobridge') && (state.action == 'withdraw')) {
+		if (props.provider == 'cryptobridge') {
 			firstTimeCoin = 'BCO';
 		}
         let activeCoin = cachedCoin ? cachedCoin : firstTimeCoin;
@@ -66,7 +62,7 @@ class CryptoBridgeGateway extends React.Component {
         const activeCoin = (this.state.action === "deposit" ? selectedCoin.backingCoinType : selectedCoin.symbol).toUpperCase().replace('BRIDGE.', '');
 
         let setting = {};
-        setting[`activeCoin_${this.props.provider}_${this.state.action}`] = activeCoin;
+        setting[`activeCoin_${this.props.provider}`] = activeCoin;
         SettingsActions.changeViewSetting(setting);
 
         this.setState({ activeCoin });
@@ -134,6 +130,7 @@ class CryptoBridgeGateway extends React.Component {
                             <DropdownList
                                 filter
                                 data={filteredCoins}
+                                value={coin}
                                 defaultValue={coin}
                                 valueComponent={CoinComponent}
                                 itemComponent={CoinComponent}
