@@ -10,10 +10,18 @@ class AssetImage extends React.Component {
         marketId: React.PropTypes.string
     };
 
-    shouldComponentUpdate(nextProps) {
-        return (
-            nextProps.cryptoBridgeAsset !== this.props.cryptoBridgeAsset
-        );
+    constructor(props) {
+        super();
+
+        this.state = {
+            src: this._getImgSrcFromProps(props)
+        }
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if(nextProps.cryptoBridgeAsset !== this.props.cryptoBridgeAsset) {
+            this.setState({ src: this._getImgSrcFromProps(nextProps) });
+        }
     }
 
     componentWillMount() {
@@ -21,11 +29,11 @@ class AssetImage extends React.Component {
     }
 
     _onImageError() {
-        this.imgRef.src = "/asset-symbols/bco.png";
+        this.setState({ src: null });
     }
 
-    render() {
-        let { name, marketId, cryptoBridgeAsset, style } = this.props;
+    _getImgSrcFromProps(props) {
+        let { name, marketId, cryptoBridgeAsset } = props;
 
         if(!name && marketId) {
             name = marketId.split("_").shift();
@@ -46,6 +54,10 @@ class AssetImage extends React.Component {
                 if(imgName === "BTC") { // TODO remove once added to API
                     imgSrc = "https://crypto-bridge.org/img/btc.png";
                 }
+
+                if(imgName === "BCO") { // TODO remove once added to API
+                    imgSrc = "/asset-symbols/bco.png";
+                }
             }
 
             if(!imgSrc) {
@@ -53,14 +65,21 @@ class AssetImage extends React.Component {
             }
         }
 
+        return imgSrc;
+    }
+
+    render() {
+
+        const { style } = this.props ;
+        const { src } = this.state;
+
         return (
-            imgSrc ?
+            src ?
                 <img
                     className="align-center"
-                    ref={(imgRef) => { this.imgRef = imgRef; }}
                     onError={this._onImageError.bind(this)}
                     style={style || {}}
-                    src={imgSrc}
+                    src={src}
                 /> : <span />
         );
     }
