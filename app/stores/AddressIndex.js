@@ -4,6 +4,9 @@ import {key} from "bitsharesjs/es";
 import {ChainConfig} from "bitsharesjs-ws";
 import Immutable from "immutable";
 import BaseStore from "stores/BaseStore";
+import CryptoBridge from "../CryptoBridge";
+
+CryptoBridge.overrideChainConfigNetworksTestSetting();
 
 let AddressIndexWorker;
 if (__ELECTRON__) {
