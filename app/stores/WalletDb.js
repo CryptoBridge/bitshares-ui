@@ -18,6 +18,9 @@ import AddressIndex from "stores/AddressIndex";
 import SettingsActions from "actions/SettingsActions";
 import notify from "actions/NotificationActions";
 import counterpart from "counterpart";
+import CryptoBridge from "../CryptoBridge";
+
+CryptoBridge.overrideChainConfigNetworksTestSetting();
 
 let aes_private = null;
 let _passwordKey = null;

@@ -17,6 +17,9 @@ import Translate from "react-translate-component";
 import {ChainConfig} from "bitsharesjs-ws";
 import {PrivateKey} from "bitsharesjs/es";
 import SettingsActions from "actions/SettingsActions";
+import CryptoBridge from "../../CryptoBridge";
+
+CryptoBridge.overrideChainConfigNetworksTestSetting();
 
 const connectObject = {
     listenTo() {

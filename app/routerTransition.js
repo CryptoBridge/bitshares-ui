@@ -23,6 +23,9 @@ import {settingsAPIs} from "api/apiConfig";
 import PrivateKeyActions from "actions/PrivateKeyActions";
 import SettingsActions from "actions/SettingsActions";
 import notify from "actions/NotificationActions";
+import CryptoBridge from "./CryptoBridge";
+
+CryptoBridge.overrideChainConfigNetworksTestSetting();
 
 ChainStore.setDispatchFrequency(60);
 
