@@ -7,7 +7,9 @@
     "contributors": [
         "James Calfee",
         "Dan Larimer",
-        "Valentine Zavgorodnev <valentine.zavgorodnev@gmail.com>"
+        "Valentine Zavgorodnev <valentine.zavgorodnev@gmail.com>",
+        "Lee Burton",
+        "Juan Carlos Miranda Carruana"
     ],
     "license": "MIT",
     "engines": {
@@ -179,6 +181,7 @@
         "react-qr-reader": "^2.1.0",
         "react-responsive-mixin": "^0.4.0",
         "react-router": "^3.0.2",
+        "react-rte": "^0.16.1",
         "react-stockcharts": "^0.6.1",
         "react-tooltip": "^3.2.2",
         "react-transition-group": "^1.2.0",
