@@ -39,6 +39,7 @@ import ExchangeContainer from "./components/Exchange/ExchangeContainer";
 import MarketsContainer from "./components/Explorer/MarketsContainer";
 import Transfer from "./components/Transfer/Transfer";
 import SettingsContainer from "./components/Settings/SettingsContainer";
+import SupportContainer from "./components/Support/SupportContainer";
 import BlockContainer from "./components/Blockchain/BlockContainer";
 import Asset from "./components/Blockchain/Asset";
 import CreateAccount from "./components/Account/CreateAccount";
@@ -121,6 +122,8 @@ const routes = (
         <Route path="market/:marketID" component={ExchangeContainer} />
         <Route path="settings" component={SettingsContainer} />
         <Route path="settings/:tab" component={SettingsContainer} />
+        <Route path="support" component={SupportContainer} />
+        <Route path="support/:ticketId" component={SupportContainer} />
         <Route path="block/:height" component={BlockContainer} />
         <Route path="asset/:symbol" component={Asset} />
         <Route path="create-account" component={LoginSelector}>
