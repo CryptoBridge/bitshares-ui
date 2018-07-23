@@ -1,0 +1,297 @@
+.main-content--support {
+    overflow: hidden;
+}
+
+.support-menu {
+    width: 500px;
+
+    .support-tickets-list {
+        padding: 10px;
+        background-color: #3f3f3f;
+        margin-left: 10px;
+        margin-bottom: 30px;
+
+        &__header {
+            margin-bottom: 10px;
+            color: white;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            select {
+                width: auto;
+                margin-bottom: 0;
+                height: 1.5rem;
+                padding: 0 30px 0 2px;
+                font-size: 0.8rem;
+                border-radius: 2px;
+            }
+        }
+
+        &__add-button {
+            color: white;
+            font-weight: bold;
+            text-transform: none;
+            font-family: "Roboto-Regular", arial, sans-serif;
+            padding: 0 0.5rem;
+            border-radius: 2px;
+        }
+
+        &__footer {
+            color: white;
+        }
+
+        > ul {
+            width: 100%;
+            height: calc(100vh - 267px);
+            overflow: auto;
+            min-height: 100%;
+            margin-left: 0;
+            margin-bottom: 10px;
+
+            > li {
+                background-color: #eeeeee;
+                color: #2a2a2a;
+                list-style-type: none;
+                cursor: pointer;
+                padding: 5px 10px;
+                margin-bottom: 10px;
+                border-left: 15px solid transparent;
+
+                &.selected {
+                    border-left: 15px solid #0f88c2;
+                }
+
+                &:hover:not(.selected) {
+                    border-left: 15px solid #0f88c240;
+                }
+
+                &.active {
+                    color: blue;
+                }
+
+                &.done {
+                    color: #999999;
+
+                    &:hover,
+                    &.selected {
+                        color: #777777;
+                    }
+                }
+
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    .ticket-item__header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .ticket-item__status {
+        color: green;
+    }
+}
+
+.support-content {
+    display: flex;
+    max-width: 100%;
+    margin-right: 10px;
+    overflow: hidden;
+
+    &--inner {
+        flex-wrap: wrap;
+        flex: 1;
+        margin-bottom: 30px;
+        margin-top: 59px;
+        background-color: #3f3f3f;
+        padding: 10px;
+        height: calc(100vh - 188px);
+        overflow: auto;
+    }
+
+    .ticket-item {
+        flex-direction: row;
+        display: flex;
+        color: #2a2a2a;
+        padding: 10px;
+        margin-bottom: 15px;
+
+        &__user {
+            text-align: center;
+            padding-right: 15px;
+            font-size: 0.85rem;
+            color: white;
+
+            .account-image {
+                margin: 0 0 5px 0;
+
+                canvas {
+                    background-color: #eeeeee;
+                }
+            }
+        }
+
+        &__content {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            background: #eeeeee;
+            padding: 15px;
+            border-radius: 0 10px 10px 10px;
+        }
+
+        &__comments {
+            margin-left: 100px;
+        }
+
+        &__reply {
+            margin-left: 100px;
+            padding: 10px;
+        }
+
+        &__buttons {
+            text-align: right;
+        }
+
+        &__header {
+            flex-direction: row;
+            display: flex;
+            margin-bottom: 10px;
+            justify-content: space-between;
+        }
+
+        &__title,
+        &__privacy,
+        &__comment {
+            margin-bottom: 10px;
+        }
+
+        &__replies {
+            list-style: none;
+            margin-left: 130px;
+        }
+
+        &__status {
+            color: green;
+        }
+
+        &.support {
+            flex-direction: row-reverse;
+
+            .ticket-item__content {
+                border-radius: 10px 0 10px 10px;
+            }
+
+            .ticket-item__user {
+                padding-right: 0;
+                padding-left: 15px;
+            }
+        }
+    }
+
+    .ticket-item-reply {
+        background-color: #cccccc;
+        color: #2a2a2a;
+        padding: 10px;
+        margin-bottom: 15px;
+        border-radius: 10px;
+    }
+}
+
+#new_ticket_modal {
+    .modal-header {
+        display: flex;
+        padding: 0;
+
+        b {
+            top: 0;
+        }
+    }
+
+    .label-hint {
+        color: #afafaf;
+        text-transform: none;
+        display: inline;
+    }
+
+    select {
+        background: #2d2d2d
+            url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20version%3D%221.1%22%20width%3D%2232%22%20height%3D%2224%22%20viewBox%3D%220%200%2032%2024%22%3E%3Cpolygon%20points%3D%220%2C0%2032%2C0%2016%2C24%22%20style%3D%22fill%3A%20white%22%3E%3C/polygon%3E%3C/svg%3E")
+            right 10px center no-repeat;
+        background-size: 14px auto;
+        border: none;
+        border-radius: 4px;
+        color: #ffffff;
+        margin-top: 0.5rem;
+    }
+
+    p.instructions {
+        text-transform: none;
+    }
+
+    .match {
+        font-weight: bold;
+        color: #e5e127;
+    }
+
+    .modal-new-ticket {
+        &__content-inner {
+        }
+
+        &__other-issue-button,
+        &__transaction-not-found-button {
+            color: #1095d5;
+            padding: 10px 0 15px 10px;
+            background-color: transparent;
+            display: flex;
+            align-self: flex-end;
+            cursor: pointer;
+        }
+
+        &__blockchain-check {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__blockchain-url {
+            text-align: center;
+            margin-bottom: 15px;
+            color: white;
+            text-transform: none;
+        }
+
+        &__issues,
+        &__coins {
+            display: none;
+
+            &.visible {
+                display: block;
+            }
+        }
+
+        &__footer {
+            justify-content: flex-end;
+
+            .button--add {
+            }
+
+            .button--cancel {
+                background-color: #ffffffdd;
+                color: #3f3f3f;
+
+                &:hover,
+                &:active {
+                    background-color: #ffffff !important;
+                }
+            }
+        }
+    }
+}
+
+.search-results__text {
+    font-size: 0.75rem;
+}
