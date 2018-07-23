@@ -545,6 +545,28 @@ class Header extends React.Component {
                 </a>
             );
         }
+        if (active.indexOf("support") !== -1) {
+            dynamicMenuItem = (
+                <a
+                    style={{flexFlow: "row"}}
+                    className={cnames({
+                        active: active.indexOf("support") !== -1
+                    })}
+                >
+                    <Icon
+                        size="1_5x"
+                        style={{position: "relative", top: 0, left: -8}}
+                        name="support1"
+                        title="icons.support"
+                    />
+                    <Translate
+                        className="column-hide-small"
+                        component="span"
+                        content="header.support"
+                    />
+                </a>
+            );
+        }
         if (active.indexOf("news") !== -1) {
             dynamicMenuItem = (
                 <a
@@ -1550,7 +1572,6 @@ class Header extends React.Component {
                                                 active.indexOf("/settings") !==
                                                 -1
                                         },
-                                        "divider",
                                         "desktop-only"
                                     )}
                                     onClick={this._onNavigate.bind(
@@ -1577,7 +1598,6 @@ class Header extends React.Component {
                                                 active.indexOf("/settings") !==
                                                 -1
                                         },
-                                        "divider",
                                         "mobile-only",
                                         "has-submenu"
                                     )}
@@ -1595,6 +1615,32 @@ class Header extends React.Component {
                                     </div>
                                     <div className="table-cell">
                                         <Translate content="header.settings" />{" "}
+                                    </div>
+                                </li>
+
+                                <li
+                                    className={cnames(
+                                        {
+                                            active:
+                                                active.indexOf("/support") !==
+                                                -1
+                                        },
+                                        "divider"
+                                    )}
+                                    onClick={this._onNavigate.bind(
+                                        this,
+                                        "/support"
+                                    )}
+                                >
+                                    <div className="table-cell">
+                                        <Icon
+                                            size="2x"
+                                            name="support1"
+                                            title="icons.support"
+                                        />
+                                    </div>
+                                    <div className="table-cell">
+                                        <Translate content="header.support" />
                                     </div>
                                 </li>
 
