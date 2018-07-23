@@ -165,9 +165,7 @@ class MarketRow extends React.Component {
             ? ""
             : parseFloat(marketStats.change) > 0
                 ? "change-up"
-                : parseFloat(marketStats.change) < 0
-                    ? "change-down"
-                    : "";
+                : parseFloat(marketStats.change) < 0 ? "change-down" : "";
 
         let marketID = `${quote.get("symbol")}_${base.get("symbol")}`;
 
