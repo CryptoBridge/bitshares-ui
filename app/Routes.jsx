@@ -260,6 +260,22 @@ const routes = (
             }}
         />
         <Route
+            path="support"
+            getComponent={(location, cb) => {
+                import("components/Support/SupportContainer")
+                    .then(loadRoute(cb))
+                    .catch(errorLoading);
+            }}
+        />
+        <Route
+            path="support/:ticketId"
+            getComponent={(location, cb) => {
+                import("components/Support/SupportContainer")
+                    .then(loadRoute(cb))
+                    .catch(errorLoading);
+            }}
+        />
+        <Route
             path="block/:height"
             getComponent={(location, cb) => {
                 import("components/Blockchain/BlockContainer")
