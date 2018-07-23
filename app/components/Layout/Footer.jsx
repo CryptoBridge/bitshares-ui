@@ -31,10 +31,6 @@ class Footer extends React.Component {
         dynGlobalObject: "2.1.0"
     };
 
-    static contextTypes = {
-        router: PropTypes.object
-    };
-
     constructor(props) {
         super(props);
 
@@ -216,7 +212,11 @@ class Footer extends React.Component {
         if (activeNode.url == autoSelectAPI) {
             let nodeUrl = props.activeNode;
             currentNodeIndex = this.getNodeIndexByURL.call(this, nodeUrl);
-            activeNode = getNode(nodes[currentNodeIndex]);
+            activeNode = getNode(
+                currentNodeIndex > 0 && nodes[currentNodeIndex]
+                    ? nodes[currentNodeIndex]
+                    : nodes[1]
+            );
         }
 
         // Track node details
@@ -446,11 +446,11 @@ class Footer extends React.Component {
     }
 
     onBackup() {
-        this.context.router.push("/wallet/backup/create");
+        this.props.history.push("/wallet/backup/create");
     }
 
     onBackupBrainkey() {
-        this.context.router.push("/wallet/backup/brainkey");
+        this.props.history.push("/wallet/backup/brainkey");
     }
 
     onPopup() {
@@ -461,7 +461,7 @@ class Footer extends React.Component {
 
     onAccess() {
         SettingsActions.changeViewSetting({activeSetting: 6});
-        this.context.router.push("/settings/access");
+        this.props.history.push("/settings/access");
     }
 }
 Footer = BindToChainState(Footer);

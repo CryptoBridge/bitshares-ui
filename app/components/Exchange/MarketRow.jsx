@@ -6,7 +6,7 @@ import utils from "common/utils";
 import Icon from "../Icon/Icon";
 import MarketsActions from "actions/MarketsActions";
 import SettingsActions from "actions/SettingsActions";
-import PropTypes from "prop-types";
+import {withRouter} from "react-router-dom";
 
 const STATS_INTERVAL = 35 * 1000;
 
@@ -18,21 +18,17 @@ class MarketRow extends React.Component {
         noSymbols: false
     };
 
-    static contextTypes = {
-        router: PropTypes.object.isRequired
-    };
-
     constructor(props) {
-        super(props);
+        super();
 
         this.id = props.base + props.quote;
     }
 
     _onClick(marketID) {
         const newPath = `/market/${marketID}`;
-        if (newPath !== this.context.router.location.pathname) {
+        if (newPath !== this.props.location.pathname) {
             MarketsActions.switchMarket();
-            this.context.router.push(`/market/${marketID}`);
+            this.props.history.push(`/market/${marketID}`);
         }
     }
 
@@ -361,6 +357,7 @@ class MarketRow extends React.Component {
         );
     }
 }
+MarketRow = withRouter(MarketRow);
 
 export default AssetWrapper(MarketRow, {
     propNames: ["quote", "base"],
