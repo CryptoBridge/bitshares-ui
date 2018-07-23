@@ -437,6 +437,10 @@
     "cancel": "キャンセル",
     "counterpart": {
         "formats": {
+            "datetime": {
+                "short_datetime": "%d/%m/%y %H:%M",
+                "short_datetime_us": "%m/%d/%y %H:%M"
+            },
             "date": {
                 "full": "%F %T %Z",
                 "market_history": "%e/%m %H:%M:%S",
@@ -963,6 +967,7 @@
         "payments_beta": "送金 (ベータ)",
         "payments_legacy": "送金 (レガシー)",
         "settings": "設定",
+        "support": "Support",
         "title": "CryptoBridge",
         "unlock": "ログイン (ウォレットをアンロック)",
         "unlock_password": "パスワードでログイン",
@@ -1053,6 +1058,7 @@
         "settle": "Settle",
         "share": "About",
         "shuffle": "Switch trading pair",
+        "support": "Support",
         "text": {
             "membership_stats": "Membership stats",
             "signed_messages": "Signed messages"
@@ -2078,6 +2084,25 @@
         },
         "dashboard": {
             "all_markets": "すべてのマーケット"
+        },
+        "support": {
+            "new": "New",
+            "in_progress": "In Progress",
+            "awaiting_user_response": "Awaiting User Response",
+            "awaiting_agent_response": "Awaiting Agent Response",
+            "blocked": "Blocked",
+            "done": "Done",
+            "new_ticket": "New Ticket",
+            "create_ticket": "Create Ticket",
+            "cancel": "Cancel",
+            "deposits": "Deposits",
+            "withdrawals": "Withdrawals",
+            "disabled_deposits_message":
+                "Deposits have currently been disabled at the request of the coin developers.",
+            "disabled_withdrawals_message":
+                "Withdrawals have currently been disabled at the request of the coin developers.",
+            "format": "format",
+            "reply": "Reply"
         }
     }
 }

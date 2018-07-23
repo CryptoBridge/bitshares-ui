@@ -422,6 +422,10 @@
     "cancel": "取消",
     "counterpart": {
         "formats": {
+            "datetime": {
+                "short_datetime": "%d/%m/%y %H:%M",
+                "short_datetime_us": "%m/%d/%y %H:%M"
+            },
             "date": {
                 "full": "%F %T %Z",
                 "market_history": "%m-%e %H:%M:%S",
@@ -931,6 +935,7 @@
         "payments_beta": "转账（测试版）",
         "payments_legacy": "Send (legacy)",
         "settings": "设置",
+        "support": "Support",
         "title": "CryptoBridge 钱包",
         "unlock": "解锁钱包",
         "unlock_password": "使用密码登录",
@@ -1020,6 +1025,7 @@
         "settle": "Settle",
         "share": "About",
         "shuffle": "Switch trading pair",
+        "support": "Support",
         "text": {
             "membership_stats": "Membership stats",
             "signed_messages": "Signed messages"

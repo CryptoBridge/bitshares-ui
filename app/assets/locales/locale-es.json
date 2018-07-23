@@ -448,6 +448,10 @@
     "cancel": "Cancel",
     "counterpart": {
         "formats": {
+            "datetime": {
+                "short_datetime": "%d/%m/%y %H:%M",
+                "short_datetime_us": "%m/%d/%y %H:%M"
+            },
             "date": {
                 "full": "%F %T %Z",
                 "market_history": "%e/%m %H:%M:%S",
@@ -975,6 +979,7 @@
         "payments_beta": "enviar (Beta)",
         "payments_legacy": "Send (legacy)",
         "settings": "Configuraciónes",
+        "support": "Support",
         "title": "CryptoBridge",
         "unlock": "Desbloquear",
         "unlock_password": "Inicio de sesión en el Cloud Wallet",
@@ -1064,6 +1069,7 @@
         "settle": "Settle",
         "share": "About",
         "shuffle": "Switch trading pair",
+        "support": "Support",
         "text": {
             "membership_stats": "Membership stats",
             "signed_messages": "Signed messages"

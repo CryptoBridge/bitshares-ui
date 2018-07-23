@@ -442,6 +442,10 @@
     "cancel": "İptal",
     "counterpart": {
         "formats": {
+            "datetime": {
+                "short_datetime": "%d/%m/%y %H:%M",
+                "short_datetime_us": "%m/%d/%y %H:%M"
+            },
             "date": {
                 "full": "%F %T %Z",
                 "market_history": "%e/%m %H:%M:%S",
@@ -968,6 +972,7 @@
         "payments_beta": "Send (Beta)",
         "payments_legacy": "Send (legacy)",
         "settings": "Ayarlar",
+        "support": "Support",
         "title": "BitKapital",
         "unlock": "Kilidi Aç",
         "unlock_password": "Giriş yap",
@@ -1057,6 +1062,7 @@
         "settle": "Settle",
         "share": "About",
         "shuffle": "Switch trading pair",
+        "support": "Support",
         "text": {
             "membership_stats": "Membership stats",
             "signed_messages": "Signed messages"

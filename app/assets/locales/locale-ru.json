@@ -450,6 +450,10 @@
     "cancel": "Отменить",
     "counterpart": {
         "formats": {
+            "datetime": {
+                "short_datetime": "%d/%m/%y %H:%M",
+                "short_datetime_us": "%m/%d/%y %H:%M"
+            },
             "date": {
                 "full": "%F %T %Z",
                 "market_history": "%e/%m %H:%M:%S",
@@ -980,6 +984,7 @@
         "payments_beta": "Отправить (бета)",
         "payments_legacy": "Отправить (стар.)",
         "settings": "Настройки",
+        "support": "Support",
         "title": "Пользовательский интерфейс BitShares",
         "unlock": "Вход в локальный кошелек",
         "unlock_password": "Войти используя пароль",
@@ -1071,6 +1076,7 @@
         "settle": "Погашение",
         "share": "Детальнее",
         "shuffle": "Переключить торговую пару",
+        "support": "Support",
         "text": {
             "membership_stats": "Статистика членства",
             "signed_messages": "Подписанные сообщения"

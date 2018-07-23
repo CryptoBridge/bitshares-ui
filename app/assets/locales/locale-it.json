@@ -446,6 +446,10 @@
     "cancel": "Annulla",
     "counterpart": {
         "formats": {
+            "datetime": {
+                "short_datetime": "%d/%m/%y %H:%M",
+                "short_datetime_us": "%m/%d/%y %H:%M"
+            },
             "date": {
                 "full": "%F %T %Z",
                 "market_history": "%e/%m %H:%M:%S",
@@ -976,6 +980,7 @@
         "payments_beta": "Send (Beta)",
         "payments_legacy": "Send (legacy)",
         "settings": "Impostazioni",
+        "support": "Support",
         "title": "CryptoBridge",
         "unlock": "Log in (sblocca il portafoglio)",
         "unlock_password": "Log in usando una password",
@@ -1066,6 +1071,7 @@
         "settle": "Settle",
         "share": "About",
         "shuffle": "Switch trading pair",
+        "support": "Support",
         "text": {
             "membership_stats": "Membership stats",
             "signed_messages": "Signed messages"

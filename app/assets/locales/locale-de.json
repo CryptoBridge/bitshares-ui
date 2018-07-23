@@ -440,6 +440,10 @@
     "cancel": "abbrechen",
     "counterpart": {
         "formats": {
+            "datetime": {
+                "short_datetime": "%d.%m.%y %H:%M",
+                "short_datetime_us": "%m.%d.%y %H:%M"
+            },
             "date": {
                 "full": "%F %T %Z",
                 "market_history": "%e/%m %H:%M:%S",
@@ -964,6 +968,7 @@
         "payments_beta": "Send (Beta)",
         "payments_legacy": "Send (legacy)",
         "settings": "Einstellungen",
+        "support": "Support",
         "title": "CryptoBridge",
         "unlock": "Entsperren",
         "unlock_password": "Log in using a password",
@@ -1053,6 +1058,7 @@
         "settle": "Settle",
         "share": "About",
         "shuffle": "Switch trading pair",
+        "support": "Support",
         "text": {
             "membership_stats": "Membership stats",
             "signed_messages": "Signed messages"
@@ -2024,6 +2030,27 @@
         "withdraw": {
             "finalNumber": "Actual amount ：%(final_number)s",
             "winAmount": "Minimum amount: %(min_amount)s %(asset)s"
+        }
+    },
+    "cryptobridge": {
+        "support": {
+            "new": "Neu",
+            "in_progress": "In Bearbeitung",
+            "awaiting_user_response": "Warten auf Benutzerantwort",
+            "awaiting_agent_response": "Warten auf Agentantwort",
+            "blocked": "Blockiert",
+            "done": "Erledigt",
+            "new_ticket": "Neues Ticket",
+            "create_ticket": "Ticket Erstellen",
+            "cancel": "Abbrechen",
+            "deposits": "Einzahlungen",
+            "withdrawals": "Auszahlungen",
+            "disabled_deposits_message":
+                "Einzahlungen wurden auf Wunsch der Münzentwickler derzeit deaktiviert.",
+            "disabled_withdrawals_message":
+                "Auszahlungen wurden auf Wunsch der Münzentwickler derzeit deaktiviert.",
+            "format": "format",
+            "reply": "Antworten"
         }
     }
 }
