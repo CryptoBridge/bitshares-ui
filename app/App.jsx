@@ -112,6 +112,13 @@ const ExistingAccount = Loadable({
 import LoginSelector from "./components/LoginSelector";
 import {CreateWalletFromBrainkey} from "./components/Wallet/WalletCreate";
 
+/* CryptoBridge-specific imports */
+const Support = Loadable({
+    loader: () =>
+        import(/* webpackChunkName: "support" */ "./components/Support/SupportContainer"),
+    loading: LoadingIndicator
+});
+
 class App extends React.Component {
     constructor() {
         super();
@@ -209,9 +216,6 @@ class App extends React.Component {
             }.bind(this)
         );
         updateGatewayBackers();
-
-        // remove loader
-        document.getElementById("centerLoader").style.display = "none";
     }
 
     componentDidUpdate(prevProps) {
@@ -401,6 +405,19 @@ class App extends React.Component {
                                     path="/help/:path1/:path2/:path3"
                                     component={Help}
                                 />
+
+                                {/* CRYPTOBRIDGE: Support routes */}
+                                <Route
+                                    exact
+                                    path="/support"
+                                    component={Support}
+                                />
+                                <Route
+                                    exact
+                                    path="/support/:ticketId"
+                                    component={Support}
+                                />
+
                                 <Route path="*" component={Page404} />
                             </Switch>
                         </div>
