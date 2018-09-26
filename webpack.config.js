@@ -80,6 +80,8 @@ module.exports = function(env) {
     const isTestNet = !!process.env.__TESTNET__ || !!env.testnet;
     const isDevNet = !!process.env.__DEVNET__;
 
+    const recaptchaSiteKey = process.env.RECAPTCHA_SITE_KEY || "";
+
     const walletUrl = isDevNet
         ? "http://localhost:8080"
         : isTestNet
@@ -94,7 +96,8 @@ module.exports = function(env) {
                 walletUrl: walletUrl,
                 INCLUDE_BASE: !!env.prod && !env.hash,
                 PRODUCTION: !!env.prod,
-                ELECTRON: !!env.electron
+                ELECTRON: !!env.electron,
+                recaptchaSiteKey: recaptchaSiteKey
             }
         }),
         new webpack.DefinePlugin({
