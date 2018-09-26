@@ -11,19 +11,23 @@ class CheckUrlWarning extends React.Component {
 
         return (
             <div className={this.props.align === "left" ? null : "text-center"}>
-                <p style={{marginBottom: 5}}>
+                <p className="check-url-warning">
                     <Translate
                         className="label warning"
                         content="cryptobridge.general.important"
                         component="span"
-                        style={{marginRight: 10}}
                     />
                     <Translate
+                        className="label-check-url"
                         content="cryptobridge.general.check_url"
                         component="span"
                     />
+                    <img
+                        className="secure-login-image"
+                        src={secureLoginAddressPng}
+                        alt=""
+                    />
                 </p>
-                <img src={secureLoginAddressPng} alt="" />
             </div>
         );
     }
