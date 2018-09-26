@@ -10,7 +10,8 @@ $highlighted-text: #e5e127;
     $bg-color,
     $input-background,
     $modal-bg-color,
-    $secondary-text-color
+    $secondary-text-color,
+    $button-bg-color
 ) {
     .main-content--support {
         overflow: hidden;
@@ -113,13 +114,18 @@ $highlighted-text: #e5e127;
     .support-content {
         display: flex;
         max-width: 100%;
-        margin-right: 10px;
         overflow: hidden;
+
+        .ticket-close-notification-wrapper {
+            margin-left: 25px;
+            margin-right: 10px;
+        }
 
         .button--close {
             display: flex;
             align-self: flex-end;
             margin-right: 10px;
+            margin-bottom: 10px;
         }
 
         &--inner-div {
@@ -176,6 +182,11 @@ $highlighted-text: #e5e127;
                     text-align: center;
                     margin-bottom: 15px;
                 }
+
+                .notification-box {
+                    margin-left: 145px;
+                    margin-right: 30px;
+                }
             }
 
             &__reply {
@@ -229,7 +240,7 @@ $highlighted-text: #e5e127;
 
                     &-message {
                         margin-top: 10px;
-                        border-top: 1px solid lightgray;
+                        border-top: 1px solid $secondary-text-color;
                         padding-top: 10px;
                     }
                 }
@@ -247,16 +258,8 @@ $highlighted-text: #e5e127;
         }
     }
 
-    #new-ticket-modal {
-        .modal-header {
-            display: flex;
-            padding: 0;
-
-            b {
-                top: 0;
-            }
-        }
-
+    #new-ticket-modal,
+    .new-ticket-modal {
         .label-hint {
             color: $account-dimmed;
             text-transform: none;
@@ -290,7 +293,8 @@ $highlighted-text: #e5e127;
             &__other-issue-button,
             &__transaction-not-found-button {
                 color: $link-text-color;
-                padding: 10px 0 15px 10px;
+                padding: 2px 0 2px 2px;
+                margin: 7px 5px 5px 0;
                 background-color: transparent;
                 display: flex;
                 align-self: flex-end;
@@ -318,9 +322,15 @@ $highlighted-text: #e5e127;
             }
 
             &__footer {
+                margin-top: 1rem;
                 justify-content: flex-end;
 
-                .button--add {
+                .three-bounce {
+                    margin: 10px 25px;
+                }
+
+                button {
+                    margin-bottom: 0;
                 }
 
                 .button--cancel {
@@ -336,8 +346,54 @@ $highlighted-text: #e5e127;
         }
     }
 
-    .search-results__text {
-        font-size: 0.75rem;
+    // FAQ SEARCH
+    .search-results {
+        margin-bottom: 0;
+
+        &__wrapper {
+            height: 200px;
+            overflow: auto;
+            background-color: #3f3f3f70;
+            padding: 5px 10px;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            border-width: 0 3px 3px 3px;
+            border-bottom-color: #3f3f3f70;
+            border-left-color: #3f3f3f70;
+            border-right-color: #3f3f3f70;
+            border-style: solid;
+        }
+    }
+
+    .search-result {
+        &__item {
+            padding: 0.313rem;
+            margin-bottom: 0.63rem;
+
+            &:hover {
+                background-color: #ffffff22;
+            }
+        }
+
+        &__link {
+            display: flex;
+            flex-direction: column;
+            color: white;
+
+            &:hover {
+                color: white;
+            }
+        }
+
+        &__title {
+            line-height: 1.2;
+            margin-bottom: 2px;
+        }
+
+        &__text {
+            line-height: 1.2;
+            font-size: 0.75rem;
+        }
     }
 
     .support-login {
@@ -354,6 +410,40 @@ $highlighted-text: #e5e127;
         padding: 0;
     }
 
+    // NOTIFICATIONS
+    .notification-box {
+        line-height: 1.2;
+        padding: 15px;
+        border-radius: 5px;
+        text-align: center;
+        margin-bottom: 10px;
+
+        &.error {
+            color: #a94442;
+            background-color: #f2dede;
+            border-color: #ebccd1;
+        }
+
+        &.warning {
+            color: #8a6d3b;
+            background-color: #fcf8e3;
+            border-color: #faebcc;
+        }
+
+        &.info {
+            color: #31708f;
+            background-color: #d9edf7;
+            border-color: #bce8f1;
+        }
+
+        &.success {
+            color: #3c763d;
+            background-color: #dff0d8;
+            border-color: #d6e9c6;
+        }
+    }
+
+    // REACT SELECT COMPONENT
     .react-select {
         &__control {
             background-color: $input-background;
@@ -393,6 +483,44 @@ $highlighted-text: #e5e127;
             &--is-disabled {
                 background-color: green;
             }
+        }
+    }
+
+    // CB-Modal
+    .ReactModalPortal {
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            background-color: rgba(51, 51, 51, 0.7);
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-transform: translate3d(0, 0, 0);
+        }
+    }
+
+    .cb-modal {
+        padding: 2rem;
+
+        &__header {
+            border-bottom: 1px solid $secondary-text-color;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+        }
+
+        &__title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            font-family: "Roboto-Medium", arial, sans-serif;
+            margin: 0;
         }
     }
 }
