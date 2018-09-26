@@ -10,6 +10,14 @@ var locales = require("./app/assets/locales");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
+/* Load .env configuration so that it can be included in WebPack config */
+const envConfig = require("dotenv").config().parsed;
+let processEnv = {};
+
+for (let key in envConfig) {
+    processEnv[key] = JSON.stringify(envConfig[key]);
+}
+
 /*
 * For staging builds, set the version to the latest commit hash, for
 * production set it to the package version
@@ -152,6 +160,7 @@ module.exports = function(env) {
         plugins.push(new Clean(cleanDirectories, {root: root_dir}));
         plugins.push(
             new webpack.DefinePlugin({
+                "process.env": processEnv,
                 __DEV__: false
             })
         );
@@ -163,7 +172,10 @@ module.exports = function(env) {
     } else {
         plugins.push(
             new webpack.DefinePlugin({
-                "process.env": {NODE_ENV: JSON.stringify("development")},
+                "process.env": {
+                    NODE_ENV: JSON.stringify("development"),
+                    ...processEnv
+                },
                 __DEV__: true
             })
         );
@@ -265,7 +277,7 @@ module.exports = function(env) {
                         {
                             loader: "babel-loader",
                             options: {
-                                cacheDirectory: env.prod ? false : true,
+                                cacheDirectory: env.prod,
                                 plugins: ["react-hot-loader/babel"]
                             }
                         }
@@ -282,7 +294,7 @@ module.exports = function(env) {
                             loader: "babel-loader",
                             options: {
                                 compact: false,
-                                cacheDirectory: env.prod ? false : true,
+                                cacheDirectory: env.prod,
                                 plugins: ["react-hot-loader/babel"]
                             }
                         }
