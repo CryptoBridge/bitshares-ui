@@ -96,6 +96,7 @@ class AppInit extends React.Component {
                         <div className="grid-frame vertical">
                             {!apiError ? (
                                 <LoadingIndicator
+                                    type="cryptobridge-overlay"
                                     loadingText={counterpart.translate(
                                         "app_init.connecting",
                                         {server: apiServer}
