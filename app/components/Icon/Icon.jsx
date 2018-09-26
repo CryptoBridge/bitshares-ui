@@ -45,6 +45,7 @@ let icons = [
     "settle",
     "share",
     "shuffle",
+    "support1",
     "sun",
     "text",
     "thumb-tack",
