@@ -76,7 +76,7 @@ const WSS_DEV_NODES = [
         location: {translate: "settings.api_closest"}
     },
     {
-        url: "wss://bitshares.testnet.crypto-bridge.org",
+        url: "ws://localhost:8090",
         location: "DEVNET - CryptoBridge"
     }
 ];

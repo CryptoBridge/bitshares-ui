@@ -110,22 +110,25 @@ class RouterTransitioner {
                     "fake.automatic-selection"
                 ) !== -1;
 
-            this._initConnectionManager();
-
             fetch("https://api.crypto-bridge.org/api/v1/geo-nodes")
                 .then(reply =>
                     reply.json().then(nodes => {
-                        // nodes = [{url: "wss://ap-southeast-2.bts.crypto-bridge.org", location: "Sydney, Australia"}];
-
-                        const apiServer = [
-                            {
-                                url: "wss://fake.automatic-selection.com",
-                                location: {translate: "settings.api_closest"}
-                            }
-                        ].concat(nodes);
+                        const apiServer =
+                            __TESTNET__ || __DEVNET__
+                                ? settingsAPIs.WS_NODE_LIST
+                                : [
+                                      {
+                                          url:
+                                              "wss://fake.automatic-selection.com",
+                                          location: {
+                                              translate: "settings.api_closest"
+                                          }
+                                      }
+                                  ].concat(nodes);
 
                         let settingsDefaults = SettingsStore.getState()
                             .defaults;
+
                         settingsDefaults.apiServer = apiServer.concat(
                             settingsDefaults.apiServer.filter(
                                 currentApiServer => {
@@ -160,6 +163,7 @@ class RouterTransitioner {
                         // dict of apiServer url as key and the latency as value
                         const apiLatencies = SettingsStore.getState()
                             .apiLatencies;
+
                         let latenciesEstablished =
                             Object.keys(apiLatencies).length >= 3;
 
@@ -173,7 +177,7 @@ class RouterTransitioner {
                             apiConfigInconsistent()
                         ) {
                             // every x connect attempts we refresh the api latency list
-                            // automtically
+                            // automatically
                             ss.set("latencyChecks", 0);
                             latenciesEstablished = false;
                         } else {
@@ -181,6 +185,8 @@ class RouterTransitioner {
                             if (appInit)
                                 ss.set("latencyChecks", latencyChecks + 1);
                         }
+
+                        this._initConnectionManager();
 
                         if (!latenciesEstablished || !appInit) {
                             this.doLatencyUpdate(true)
@@ -201,6 +207,7 @@ class RouterTransitioner {
                     })
                 )
                 .catch(() => {
+                    this._initConnectionManager();
                     this._initiateConnection(appInit, resolve, reject);
                 });
         });
@@ -285,7 +292,7 @@ class RouterTransitioner {
             url: connectionString,
             urls: urls,
             closeCb: this._onConnectionClose.bind(this),
-            optionalApis: {enableOrders: !__TESTNET__ && !__DEVNET__},
+            optionalApis: {enableOrders: true},
             urlChangeCallback: url => {
                 console.log("fallback to new url:", url);
                 SettingsActions.changeSetting({
