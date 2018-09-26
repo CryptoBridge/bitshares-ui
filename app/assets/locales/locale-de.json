@@ -2042,23 +2042,67 @@
     },
     "cryptobridge": {
         "support": {
-            "new": "Neu",
+            "all_tickets": "Alle Tickets",
+            "open": "Offen",
             "in_progress": "In Bearbeitung",
-            "awaiting_user_response": "Warten auf Benutzerantwort",
-            "awaiting_agent_response": "Warten auf Agentantwort",
+            "waiting_for_customer": "Warten auf Benutzerantwort",
+            "waiting_for_support": "Warten auf Agentantwort",
             "blocked": "Blockiert",
-            "done": "Erledigt",
+            "closed": "Geschlossen",
             "new_ticket": "Neues Ticket",
             "create_ticket": "Ticket Erstellen",
             "cancel": "Abbrechen",
+            "deposit": "Einzahlung",
             "deposits": "Einzahlungen",
+            "withdrawal": "Auszahlung",
             "withdrawals": "Auszahlungen",
             "disabled_deposits_message":
                 "Einzahlungen wurden auf Wunsch der Münzentwickler derzeit deaktiviert.",
             "disabled_withdrawals_message":
                 "Auszahlungen wurden auf Wunsch der Münzentwickler derzeit deaktiviert.",
             "format": "format",
-            "reply": "Antworten"
+            "reply": "Antworten",
+            "close_ticket": "Ticket Schließen",
+            "support_intro_text":
+                "CryptoBridge bietet jetzt integrierten Support, mit dem Sie Ihre Support-Tickets an einem Ort verwalten und den aktuellen Status anzeigen können. Um diesen Service nutzen zu können, müssen Sie sich zuerst einloggen.",
+            "have_another_issue": "Ich habe ein anderes Problem",
+            "new_ticket_intro1":
+                "Bitte öffnen Sie nicht mehrere Tickets für das gleiche Problem - dies könnte die Bearbeitung Ihres Problems verlangsamen.",
+            "new_ticket_intro2":
+                "Bevor Sie ein neues Ticket öffnen, suchen Sie bitte in unseren FAQs nach möglichen Lösungen für Ihr Problem:",
+            "coin_list_placeholder": "Wählen Sie Ihre Münze…",
+            "loading_coin_list": "Münzliste wird geladen…",
+            "explorer_instructions":
+                "Bevor Sie ein Ticket öffnen, überprüfen Sie bitte den Blockchain-Explorer für Ihre Transaktion:",
+            "not_see_transaction": "Ich sehe meine Transaktion nicht",
+            "faq_search_placeholder": "Bitte geben Sie Ihre Suchkriterien ein…",
+            "faq_search_aria_label": "Durchsuchen Sie die FAQs",
+            "comment_successfully_posted":
+                "Dein Kommentar wurde erfolgreich veröffentlicht",
+            "enter_your_reply": "Bitte geben Sie Ihre Antwort ein…",
+            "enter_your_message": "Bitte geben Sie Ihre Nachricht ein…",
+            "enter_amount": "Menge eingeben…",
+            "enter_transaction_id": "Geben Sie die Transaktions-ID ein…",
+            "enter_recipient_address": "Geben Sie die Empfängeradresse ein…",
+            "cannot_fetch_tickets":
+                "Sorry but we cannot fetch your support tickets right now. Please refresh your browser or try again later.",
+            "cannot_fetch_comments":
+                "Sorry but we cannot fetch your support ticket comments right now. Please refresh your browser or try again later.",
+            "cannot_reply_ticket":
+                "There was a problem replying to the ticket. Please refresh your browser or try again later.",
+            "cannot_close_ticket":
+                "There was a problem closing the ticket. Please refresh your browser or try again later.",
+            "cannot_create_ticket":
+                "There was a problem creating the ticket. Please refresh your browser or try again later.",
+            "amount": "Amount",
+            "message": "Message",
+            "transaction_id": "Transaction ID",
+            "recipient_address": "Recipient Address",
+            "issue": "Issue",
+            "issues_dropdown_placeholder": "What is your issue?",
+            "processing_please_wait": "Processing. Please wait...",
+            "saving_reply_please_wait": "Saving reply. Please wait...",
+            "incomplete_form_fields": "Please complete all required fields"
         }
     }
 }
