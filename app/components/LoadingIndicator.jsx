@@ -19,6 +19,32 @@ class LoadingIndicator extends React.Component {
 
     render() {
         switch (this.props.type) {
+            case "cryptobridge-overlay":
+                var classes = "cryptobridge-overlay";
+                if (this.progress > 0) {
+                    classes += " with-progress";
+                }
+                return (
+                    <div className={classes}>
+                        <div className="loading-overlay" />
+                        <div className="loading-panel">
+                            {this.props.loadingText && (
+                                <div
+                                    className="text-center"
+                                    style={{paddingTop: "10px", color: "black"}}
+                                >
+                                    {this.props.loadingText}
+                                </div>
+                            )}
+                            <div className="spinner">
+                                <div className="cryptobridge" />
+                            </div>
+                            <div className="progress-indicator">
+                                <span>{this.state.progress}</span>
+                            </div>
+                        </div>
+                    </div>
+                );
             case "three-bounce":
                 return (
                     <div className="three-bounce">
