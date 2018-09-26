@@ -1,4 +1,6 @@
 @import "../utils/utils";
+@import "../components/cb/support";
+@import "../components/cb/richtext-editor";
 
 @mixin theme(
     $primary-text-color,
@@ -89,8 +91,13 @@
     }
 
     #unlock_wallet_modal2 {
+        .account-selector {
+            margin-bottom: 20px;
+        }
+
         .upload-button {
             border-color: $border-color;
+
             span {
                 color: $settings-select-color;
             }
@@ -110,6 +117,35 @@
 
         .themed-input {
             background-color: $input-background;
+        }
+
+        .check-url-warning {
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .label-check-url {
+            display: block;
+        }
+
+        .label.warning,
+        .label-check-url {
+            margin-right: 10px;
+            margin-bottom: 5px;
+        }
+
+        .secure-login-image {
+            max-width: 250px;
+        }
+
+        .modal-header {
+            > img {
+                width: 80px;
+            }
+        }
+
+        .modal-content {
+            padding-top: 0;
         }
     }
 
@@ -2373,6 +2409,28 @@
             margin: 0 auto;
         }
     }
+
+    @include cb_support_styles(
+        $settings-select-bg,
+        $primary-text-color,
+        $account-dimmed,
+        $dark-text-color,
+        $link-text-color,
+        $secondary-button-bg-color,
+        $bg-color,
+        $input-background,
+        $modal-bg-color,
+        $secondary-text-color,
+        $button-bg-color
+    );
+
+    @include cb_rich_text_editor_styles(
+        $input-background,
+        $secondary-text-color,
+        $primary-text-color,
+        $light-panel-bg-color,
+        $modal-bg-color
+    );
 }
 
 .rc-time-picker-panel {
