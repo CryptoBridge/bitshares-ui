@@ -13,6 +13,10 @@ $highlighted-text: #e5e127;
     $secondary-text-color,
     $button-bg-color
 ) {
+    .grecaptcha-badge {
+        display: none;
+    }
+
     .main-content--support {
         overflow: hidden;
 
