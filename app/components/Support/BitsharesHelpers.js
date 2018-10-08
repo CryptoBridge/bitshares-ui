@@ -52,19 +52,9 @@ export const signMemoWithKeys = (
  */
 export const generateRequestOptions = account => {
     const username = account.get("name");
-    const accountOptions = account.get("options");
     const memoPublicKeyStr = account.getIn(["options", "memo_key"]);
     const memoPrivateKey = WalletDb.getPrivateKey(memoPublicKeyStr);
-
-    console.log("### WalletDb locked?=", WalletDb.isLocked());
-    console.log("### username=", username);
-    console.log("### accountOptions=", accountOptions);
-    console.log("### memoPublicKeyStr=", memoPublicKeyStr);
-    console.log("### memoPrivateKey=", memoPrivateKey);
-
-    console.log("### recipientPublicKeyStr=", config.support);
-    const recipientPublicKeyStr =
-        "BTS4wDJjaKzywGU9RaQpx1JvjFnnWd4pibP9hxYdphXHUdt2wvqAS";
+    const recipientPublicKeyStr = config.support.publicKey;
     const recipientPublicKey = PublicKey.fromPublicKeyString(
         recipientPublicKeyStr
     );
