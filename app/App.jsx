@@ -409,12 +409,7 @@ class App extends React.Component {
                                 {/* CRYPTOBRIDGE: Support routes */}
                                 <Route
                                     exact
-                                    path="/support"
-                                    component={Support}
-                                />
-                                <Route
-                                    exact
-                                    path="/support/:ticketId"
+                                    path="/support/:ticketId?"
                                     component={Support}
                                 />
 
