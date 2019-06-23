@@ -620,7 +620,7 @@
         "price_market": "マーケット価格",
         "quantity": "数量",
         "quick_deposit": "%(asset)sを入金",
-        "quick_deposit_bridge": "ブリッジを使用して既存のゲートウェイを使用した外部のアセットを入金し、すぐに %(target)s　へトレードする",
+        "quick_deposit_bridge": "ブリッジを使用して既存のゲートウェイを使用した外部のアセットを入金し、すぐに %(target)s へトレードする",
         "quick_deposit_bridge_button": "ブリッジを使用する",
         "quick_deposit_gateway": "それぞれのゲートウェイによって裏付けされているIOUを得るために、実際の %(asset)s をゲートウェイを使用して入金します",
         "quick_deposit_gateway_button": "ゲートウェイを使用する",
@@ -771,7 +771,7 @@
                     "アセット発行者はここに蓄積された手数料を請求することができます。",
                 "core_exchange_rate": "中心取引レート (CER)",
                 "fund": "手数料プールに補填",
-                "fund_text":　"このフォームを使用して誰でも手数料プール残高に%(core)sを追加できます:",
+                "fund_text": "このフォームを使用して誰でも手数料プール残高に%(core)sを追加できます:",
                 "pool_balance": "プール残高",
                 "pool_text": "手数料プールは%(asset)sの手数料を%(core)sに換算することによって%(core)sの手数料を支払うために使用されます。手数料プールの資金が尽きた場合、手数料を%(asset)sで払うことはできなくなり、既定値は%(core)sになります。<br/><br/>中心為替レートは%(asset)sが%(core)sへ変換されるときの価格です。",
                 "title": "手数料プール",
@@ -1170,7 +1170,7 @@
         "withdraw_now": "今すぐ出金",
         "withdraw_placeholder": "%(asset)sアドレスを入力してください",
         "withdraw_summary": "出金概要",
-        "withdraw_to":　"%(asset)sの出金画面を開くには下のボタンをクリックしてください",
+        "withdraw_to": "%(asset)sの出金画面を開くには下のボタンをクリックしてください",
         "xbtsx": {
             "coming_soon": "Coming soon",
             "min_amount": "Minimum amount: %(minAmount)s %(symbol)s",
@@ -2019,11 +2019,11 @@
         "generate": "生成パスワードはローカルでブラウザによって作成されたものです。 <br /><br /><strong> あなただけがアクセスできます。</strong><br /><br /> 以下の欄に貼り付けて、安全な場所にコピーを保存してください。",
         "global_settle": "このアセットはグローバル決済中です。決済するとあなたが保有する%(asset)sを%(backingAsset)sにグローバル決済価格 (取引画面上部またはアセット詳細画面に表示) で即時変換します。",
         "global_settle_price": "これは決済注文が執行される価格です。このアセットはグローバル決済中であり、決済注文は即時執行されます。",
-        "hide_asset":　"このリストからこのアセットを非表示にするにはここをクリックしてください。",
+        "hide_asset": "このリストからこのアセットを非表示にするにはここをクリックしてください。",
         "lack_funds": "操作を実行するのに必要な資金が不足しています",
         "latest_price": "これはこの市場における最新の価格です。",
         "legacy_explanation": "重複、スパムまたは開始から2ヶ月以上アクティブでない提案を非表示にします。",
-        "login":　"CryptoBridgeウォレットには従来のログインはありませんが、その代わりに、ブラウザ内に<b>のみ</b>保持されているウォレットをロック、アンロックするだけです。<br/><br/>あなたがウォレットを閉じる度にロックされ、事実上ログアウトされます。",
+        "login": "CryptoBridgeウォレットには従来のログインはありませんが、その代わりに、ブラウザ内に<b>のみ</b>保持されているウォレットをロック、アンロックするだけです。<br/><br/>あなたがウォレットを閉じる度にロックされ、事実上ログアウトされます。",
         "login-tooltip": {
             "incorrectPassword": {
                 "begin": "他のパスワードを入力するか、",
@@ -2283,7 +2283,7 @@
         "see": "自身の転送を見る",
         "send": "送信",
         "to": "To",
-        "warn_name_unable_read_memo":　"警告: %(name)sはこのメモを読むことができません。"
+        "warn_name_unable_read_memo": "警告: %(name)sはこのメモを読むことができません。"
     },
     "trx_error": {
         "expire": "あなたのトランザクションは確認されずに期限切れになりました。後でやり直してください。"
