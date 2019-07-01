@@ -154,7 +154,7 @@ class LoginSelector extends React.Component {
                         <div className="grid-block account-login-options">
                             <Link
                                 id="account_login_button"
-                                to="/create-account/password"
+                                to="/create-account/cloud"
                                 className="button primary"
                                 data-intro={translator.translate(
                                     "walkthrough.create_cloud_wallet"
@@ -196,7 +196,7 @@ class LoginSelector extends React.Component {
                                         },
                                         {
                                             type: "link",
-                                            value: "/create-account/wallet",
+                                            value: "/create-account/local",
                                             translation:
                                                 "account.optional.restore_form",
                                             dataIntro: translator.translate(
@@ -214,7 +214,7 @@ class LoginSelector extends React.Component {
                         </div>
 
                         <Route
-                            path="/create-account/wallet"
+                            path="/create-account/local"
                             exact
                             component={CreateAccount}
                         />
