@@ -194,47 +194,59 @@ class MarketRow extends React.Component {
                                 key={column.index}
                             >
                                 {isIdentified ? (
-                                    <div
-                                        style={{float: "right", marginTop: -3}}
+                                    <Tooltip
+                                        title={
+                                            <div>
+                                                <strong>
+                                                    {counterpart.translate(
+                                                        "cryptobridge.trade.tooltip.identity.title"
+                                                    )}
+                                                </strong>
+                                                <br />
+                                                {counterpart.translate(
+                                                    "cryptobridge.trade.tooltip.identity.description",
+                                                    {
+                                                        asset: getCleanAssetSymbol(
+                                                            quote.get("symbol")
+                                                        )
+                                                    }
+                                                )}
+                                            </div>
+                                        }
                                     >
-                                        <Tooltip
-                                            title={counterpart.translate(
-                                                "cryptobridge.trade.tooltip.identity",
-                                                {
-                                                    asset: getCleanAssetSymbol(
-                                                        base.get("symbol")
-                                                    )
-                                                }
-                                            )}
+                                        <div
+                                            style={{
+                                                float: "right",
+                                                marginTop: -3
+                                            }}
                                         >
                                             <Icon
                                                 name="identity"
-                                                title="cryptobridge.icons.identity"
                                                 style={{opacity: 0.9}}
                                             />
-                                        </Tooltip>
-                                    </div>
+                                        </div>
+                                    </Tooltip>
                                 ) : null}
                                 {isBenchmarked ? (
-                                    <div
-                                        style={{float: "right", marginLeft: 5}}
+                                    <Tooltip
+                                        title={counterpart.translate(
+                                            "cryptobridge.trade.tooltip.benchmark",
+                                            {
+                                                asset: getCleanAssetSymbol(
+                                                    quote.get("symbol")
+                                                )
+                                            }
+                                        )}
                                     >
-                                        <Tooltip
-                                            title={counterpart.translate(
-                                                "cryptobridge.trade.tooltip.benchmark",
-                                                {
-                                                    asset: getCleanAssetSymbol(
-                                                        base.get("symbol")
-                                                    )
-                                                }
-                                            )}
+                                        <div
+                                            style={{
+                                                float: "right",
+                                                marginLeft: 5
+                                            }}
                                         >
-                                            <Icon
-                                                name="benchmark"
-                                                title="cryptobridge.icons.benchmark"
-                                            />
-                                        </Tooltip>
-                                    </div>
+                                            <Icon name="benchmark" />
+                                        </div>
+                                    </Tooltip>
                                 ) : null}
                                 {this.props.name}
                             </td>

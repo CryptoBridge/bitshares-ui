@@ -417,7 +417,8 @@ export function getBackedCoins({allCoins, tradingPairs, backer}) {
                     outputCoin.depositFeePercentageLowAmounts,
 
                 info: outputCoin.info,
-                scoring: outputCoin.scoring
+                scoring: outputCoin.scoring,
+                badges: outputCoin.badges
 
                 /* /CRYPTOBRIDGE */
             });

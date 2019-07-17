@@ -2660,8 +2660,13 @@
             },
             "tooltip": {
                 "deposit": "Deposit %(asset)s",
-                "identity": "%(asset)s fulfilled user identification process",
-                "benchmark": "%(asset)s is benchmarked"
+                "identity": {
+                    "title": "Developer Identity Verified",
+                    "description": "A team member of %(asset)s has verified his identity with us to confirm the asset’s legitimacy. Keep in mind: Always do your own research before trading."
+                },
+                "benchmark": {
+                    "title": "%(asset)s is benchmarked"
+                }
             },
             "deposit": {
                 "login": "Please login to deposit an asset."
