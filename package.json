@@ -88,6 +88,7 @@
     "browsersList": "electron 1.7",
     "build": {
         "productName": "CryptoBridge",
+        "artifactName": "${productName}-${version}.${ext}",
         "appId": "crypto-bridge.org",
         "files": [
             "build/electron",
@@ -97,8 +98,7 @@
             "category": "public.app-category.finance"
         },
         "dmg": {
-            "contents": [
-                {
+            "contents": [{
                     "x": 130,
                     "y": 220
                 },
@@ -111,15 +111,14 @@
             ]
         },
         "win": {
-            "target": [
-                {
-                    "target": "nsis",
-                    "arch": [
-                        "x64",
-                        "ia32"
-                    ]
-                }
-            ]
+            "target": [{
+                "target": "nsis",
+                "arch": [
+                    "x64",
+                    "ia32"
+                ]
+            }],
+            "artifactName": "${productName}-${version}-Setup.${ext}"
         },
         "linux": {
             "category": "Finance",
@@ -128,7 +127,8 @@
                 "AppImage",
                 "snap"
             ],
-            "synopsis": "CryptoBridge: Gateway to Decentralized Trading"
+            "synopsis": "CryptoBridge: Gateway to Decentralized Trading",
+            "artifactName": "${productName}-${version}-amd64.${ext}"
         },
         "directories": {
             "buildResources": "resources",
