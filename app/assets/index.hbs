@@ -9,36 +9,62 @@
     <meta name="viewport" content="width=device-width" />
     <meta name="format-detection" content="telephone=no">
     <title>{{title}}</title>
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' blob:; worker-src 'self' blob:; script-src https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/ https://www.google.com/ https://www.gstatic.com https://www.googletagmanager.com https://www.google-analytics.com 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' *; frame-src 'self' https://crypto-bridge.org https://www.google.com https://widgets.crypto-bridge.org; font-src 'self' data: https://at.alicdn.com; img-src 'self' data: https://www.googletagmanager.com https://www.google.com/ https://www.google-analytics.com https://stats.g.doubleclick.net https://crypto-bridge.org https://wallet.crypto-bridge.org {{walletUrl}}">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' blob:; worker-src 'self' blob:; script-src https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/ https://www.google.com/ https://www.gstatic.com https://www.googletagmanager.com https://www.google-analytics.com 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' *; frame-src 'self' https://crypto-bridge.org https://www.google.com https://widgets.crypto-bridge.org; font-src 'self' data: https://at.alicdn.com; img-src 'self' data: https://www.googletagmanager.com https://www.google.com/ https://www.google-analytics.com https://stats.g.doubleclick.net https://crypto-bridge.org https://wallet.crypto-bridge.org {{walletUrl}}">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
         body {
             background-color: #0d182a;
         }
+
         @-webkit-keyframes rotate {
-            from { -webkit-transform: rotate(0deg) }
-            to { -webkit-transform: rotate(360deg) }
+            from {
+                -webkit-transform: rotate(0deg)
+            }
+
+            to {
+                -webkit-transform: rotate(360deg)
+            }
         }
+
         @-moz-keyframes rotate {
-            from { -moz-transform: rotate(0deg) }
-            to { -moz-transform: rotate(360deg) }
+            from {
+                -moz-transform: rotate(0deg)
+            }
+
+            to {
+                -moz-transform: rotate(360deg)
+            }
         }
+
         @-o-keyframes rotate {
-            from { -o-transform: rotate(0deg) }
-            to { -o-transform: rotate(180deg) }
+            from {
+                -o-transform: rotate(0deg)
+            }
+
+            to {
+                -o-transform: rotate(180deg)
+            }
         }
+
         @-ms-keyframes rotate {
-            from { -ms-transform: rotate(0deg) }
-            to { -ms-transform: rotate(360deg) }
+            from {
+                -ms-transform: rotate(0deg)
+            }
+
+            to {
+                -ms-transform: rotate(360deg)
+            }
         }
+
         #centerLoader {
-            position:absolute;
+            position: absolute;
             top: 75%;
             left: 50%;
             width: 80px;
             height: 80px;
-            margin-top:-40px;
-            margin-left:-40px;
+            margin-top: -40px;
+            margin-left: -40px;
             -webkit-animation: rotate 2s linear infinite 0s;
             -moz-animation: rotate 2s linear infinite 0s;
             -o-animation: rotate 2s linear infinite 0s;
@@ -62,74 +88,113 @@
         }
     </script>
     {{/if}}
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113295938-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-113295938-1');
-    </script>
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-P658S7Z');</script>
+    <!-- End Google Tag Manager -->
 </head>
 
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P658S7Z" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <main id="content">
-        <svg id="centerLoader" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 75.65 76.54">
+        <svg id="centerLoader" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 75.65 76.54">
             <defs>
                 <style>
-                    .cls-1{fill:#fff;}.cls-2{fill:none;}.cls-3{fill:#00fff4;}.cls-4{fill:#008eff;}.cls-5{fill:url(#gradient1);}.cls-6{fill:url(#gradient4);}.cls-7{fill:url(#gradient2);}.cls-8{fill:url(#gradient3);}
+                    .cls-1 {
+                        fill: #fff;
+                    }
+
+                    .cls-2 {
+                        fill: none;
+                    }
+
+                    .cls-3 {
+                        fill: #00fff4;
+                    }
+
+                    .cls-4 {
+                        fill: #008eff;
+                    }
+
+                    .cls-5 {
+                        fill: url(#gradient1);
+                    }
+
+                    .cls-6 {
+                        fill: url(#gradient4);
+                    }
+
+                    .cls-7 {
+                        fill: url(#gradient2);
+                    }
+
+                    .cls-8 {
+                        fill: url(#gradient3);
+                    }
                 </style>
                 <linearGradient id="gradient1" x1="23.26" y1="57.29" x2="24.71" y2="58.13"
-                                gradientUnits="userSpaceOnUse">
-                    <stop offset="0" stop-color="#19468e"/>
-                    <stop offset="1" stop-color="#008eff"/>
+                    gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#19468e" />
+                    <stop offset="1" stop-color="#008eff" />
                 </linearGradient>
-                <linearGradient id="gradient4" x1="31.33" y1="41.13" x2="33.73" y2="42.51"
-                                xlink:href="#gradient1"/>
+                <linearGradient id="gradient4" x1="31.33" y1="41.13" x2="33.73" y2="42.51" xlink:href="#gradient1" />
                 <linearGradient id="gradient2" x1="64.09" y1="41.51" x2="66.16" y2="42.71"
-                                gradientUnits="userSpaceOnUse">
-                    <stop offset="0" stop-color="#347c8b"/>
-                    <stop offset="1" stop-color="#00fff4"/>
+                    gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#347c8b" />
+                    <stop offset="1" stop-color="#00fff4" />
                 </linearGradient>
-                <linearGradient id="gradient3" x1="55.08" y1="57.14" x2="57.15" y2="58.33"
-                                xlink:href="#gradient2"/>
+                <linearGradient id="gradient3" x1="55.08" y1="57.14" x2="57.15" y2="58.33" xlink:href="#gradient2" />
             </defs>
             <title>Element 8</title>
             <g>
                 <g>
-                    <path class="cls-1" d="M36.22,72.28l-.07,0Z"/>
-                    <path class="cls-1" d="M38.31,72.5h0Z"/>
-                    <path class="cls-1" d="M37.26,72.49l-.27,0Z"/>
-                    <path class="cls-1" d="M39.36,72.28a6,6,0,0,1-.71.16A6,6,0,0,0,39.36,72.28Z"/>
-                    <path class="cls-1" d="M37,72.45a5,5,0,0,1-.77-.17A6.6,6.6,0,0,0,37,72.45Z"/>
-                    <path class="cls-1" d="M39.47,72.24l-.11,0Z"/>
-                    <path class="cls-1" d="M37.82,72.51a5.33,5.33,0,0,1-.56,0A5.33,5.33,0,0,0,37.82,72.51Z"/>
-                    <path class="cls-1" d="M38.65,72.44l-.34.06Z"/>
-                    <polygon class="cls-2" points="33.82 38.26 37.82 45.2 41.82 38.26 37.82 31.33 33.82 38.26"/>
+                    <path class="cls-1" d="M36.22,72.28l-.07,0Z" />
+                    <path class="cls-1" d="M38.31,72.5h0Z" />
+                    <path class="cls-1" d="M37.26,72.49l-.27,0Z" />
+                    <path class="cls-1" d="M39.36,72.28a6,6,0,0,1-.71.16A6,6,0,0,0,39.36,72.28Z" />
+                    <path class="cls-1" d="M37,72.45a5,5,0,0,1-.77-.17A6.6,6.6,0,0,0,37,72.45Z" />
+                    <path class="cls-1" d="M39.47,72.24l-.11,0Z" />
+                    <path class="cls-1" d="M37.82,72.51a5.33,5.33,0,0,1-.56,0A5.33,5.33,0,0,0,37.82,72.51Z" />
+                    <path class="cls-1" d="M38.65,72.44l-.34.06Z" />
+                    <polygon class="cls-2" points="33.82 38.26 37.82 45.2 41.82 38.26 37.82 31.33 33.82 38.26" />
                     <path class="cls-2"
-                          d="M14.92,16.1a5.14,5.14,0,0,0-3.13-2.39,5.3,5.3,0,0,0-1.36-.18A5.14,5.14,0,0,0,6,21.25L12.74,33l6-10.32Z"/>
-                    <path class="cls-2" d="M60.73,60.43a5.14,5.14,0,0,0,9.43-1.25,5.1,5.1,0,0,0-.5-3.9L62.91,43.57,57,53.89Z"/>
-                    <path class="cls-1" d="M36.25,71l-.08,0Z"/>
-                    <path class="cls-1" d="M38.34,71.2a4,4,0,0,1-.49,0Z"/>
-                    <path class="cls-1" d="M37.29,71.2l-.28,0Z"/>
-                    <path class="cls-1" d="M39.38,71a4.41,4.41,0,0,1-.7.16A5.47,5.47,0,0,0,39.38,71Z"/>
-                    <path class="cls-1" d="M37,71.15a5.19,5.19,0,0,1-.76-.17A5.19,5.19,0,0,0,37,71.15Z"/>
-                    <path class="cls-1" d="M39.5,70.94l-.12,0Z"/>
-                    <path class="cls-1" d="M37.85,71.21a5.23,5.23,0,0,1-.56,0A5.23,5.23,0,0,0,37.85,71.21Z"/>
-                    <path class="cls-1" d="M38.68,71.14l-.34.06Z"/>
+                        d="M14.92,16.1a5.14,5.14,0,0,0-3.13-2.39,5.3,5.3,0,0,0-1.36-.18A5.14,5.14,0,0,0,6,21.25L12.74,33l6-10.32Z" />
+                    <path class="cls-2"
+                        d="M60.73,60.43a5.14,5.14,0,0,0,9.43-1.25,5.1,5.1,0,0,0-.5-3.9L62.91,43.57,57,53.89Z" />
+                    <path class="cls-1" d="M36.25,71l-.08,0Z" />
+                    <path class="cls-1" d="M38.34,71.2a4,4,0,0,1-.49,0Z" />
+                    <path class="cls-1" d="M37.29,71.2l-.28,0Z" />
+                    <path class="cls-1" d="M39.38,71a4.41,4.41,0,0,1-.7.16A5.47,5.47,0,0,0,39.38,71Z" />
+                    <path class="cls-1" d="M37,71.15a5.19,5.19,0,0,1-.76-.17A5.19,5.19,0,0,0,37,71.15Z" />
+                    <path class="cls-1" d="M39.5,70.94l-.12,0Z" />
+                    <path class="cls-1" d="M37.85,71.21a5.23,5.23,0,0,1-.56,0A5.23,5.23,0,0,0,37.85,71.21Z" />
+                    <path class="cls-1" d="M38.68,71.14l-.34.06Z" />
                     <path class="cls-3"
-                          d="M62.91,43.57l6.75,11.71a5.1,5.1,0,0,1,.5,3.9,5.14,5.14,0,0,1-9.43,1.25L57,53.89l-2.21,3.85-.85,1.45,2.24,3.89a10.46,10.46,0,0,0,14.29,3.83,10.49,10.49,0,0,0,3.83-14.28L66,38.26l-2,3.41Z"/>
+                        d="M62.91,43.57l6.75,11.71a5.1,5.1,0,0,1,.5,3.9,5.14,5.14,0,0,1-9.43,1.25L57,53.89l-2.21,3.85-.85,1.45,2.24,3.89a10.46,10.46,0,0,0,14.29,3.83,10.49,10.49,0,0,0,3.83-14.28L66,38.26l-2,3.41Z" />
                     <path class="cls-3"
-                          d="M46.91,5.22a10.13,10.13,0,0,0-2.73-3,6.91,6.91,0,0,0-.62-.44c-.15-.1-.3-.21-.46-.3L43,1.39A10,10,0,0,0,41.7.75,10.69,10.69,0,0,0,40.18.27L40,.22c-.24,0-.49-.09-.73-.12l-.35,0c-.2,0-.41,0-.61,0h-1l-.54,0L36.37.1c-.22,0-.45.07-.67.12l-.26.05c-.29.07-.57.15-.85.24l-.05,0a10.32,10.32,0,0,0-5.8,4.69L22.54,16l-.79,1.37-2.27,3.94-.79,1.37-5.16,9L12.74,33l-2.27,3.93-.79,1.37L1.4,52.63a10.46,10.46,0,0,0,9,15.68,10.7,10.7,0,0,0,2.74-.37,10.36,10.36,0,0,0,6.35-4.87l2.24-3.88,3.06-5.3,6-10.32,3.06-5.31,4-6.93,4,6.93L44.88,33l-4-6.94-3.06-5.3L34.76,26l-4,6.94-3.06,5.3L21.75,48.58l-3.06,5.31-3.77,6.54A5.16,5.16,0,0,1,6,55.27l6.75-11.7,3.06-5.31L21.75,28l3.06-5.31,4-6.93,4.52-7.84A5.16,5.16,0,0,1,37.8,5.29h0a5.18,5.18,0,0,1,4.48,2.58l4.51,7.83,4,6.94,3.06-5.31Z"/>
+                        d="M46.91,5.22a10.13,10.13,0,0,0-2.73-3,6.91,6.91,0,0,0-.62-.44c-.15-.1-.3-.21-.46-.3L43,1.39A10,10,0,0,0,41.7.75,10.69,10.69,0,0,0,40.18.27L40,.22c-.24,0-.49-.09-.73-.12l-.35,0c-.2,0-.41,0-.61,0h-1l-.54,0L36.37.1c-.22,0-.45.07-.67.12l-.26.05c-.29.07-.57.15-.85.24l-.05,0a10.32,10.32,0,0,0-5.8,4.69L22.54,16l-.79,1.37-2.27,3.94-.79,1.37-5.16,9L12.74,33l-2.27,3.93-.79,1.37L1.4,52.63a10.46,10.46,0,0,0,9,15.68,10.7,10.7,0,0,0,2.74-.37,10.36,10.36,0,0,0,6.35-4.87l2.24-3.88,3.06-5.3,6-10.32,3.06-5.31,4-6.93,4,6.93L44.88,33l-4-6.94-3.06-5.3L34.76,26l-4,6.94-3.06,5.3L21.75,48.58l-3.06,5.31-3.77,6.54A5.16,5.16,0,0,1,6,55.27l6.75-11.7,3.06-5.31L21.75,28l3.06-5.31,4-6.93,4.52-7.84A5.16,5.16,0,0,1,37.8,5.29h0a5.18,5.18,0,0,1,4.48,2.58l4.51,7.83,4,6.94,3.06-5.31Z" />
                     <path class="cls-4"
-                          d="M12.74,33,6,21.25a5.14,5.14,0,0,1,4.44-7.72,5.3,5.3,0,0,1,1.36.18,5.14,5.14,0,0,1,3.13,2.39l3.77,6.54,3.06-5.31-2.24-3.88a10.34,10.34,0,0,0-6.35-4.86,10.36,10.36,0,0,0-7.93,1A10.47,10.47,0,0,0,1.4,23.9L9.68,38.26Z"/>
+                        d="M12.74,33,6,21.25a5.14,5.14,0,0,1,4.44-7.72,5.3,5.3,0,0,1,1.36.18,5.14,5.14,0,0,1,3.13,2.39l3.77,6.54,3.06-5.31-2.24-3.88a10.34,10.34,0,0,0-6.35-4.86,10.36,10.36,0,0,0-7.93,1A10.47,10.47,0,0,0,1.4,23.9L9.68,38.26Z" />
                     <path class="cls-4"
-                          d="M70.42,9.62a10.48,10.48,0,0,0-14.29,3.83l-1.88,3.26-.36.62L51.19,22l-.36.62-5.59,9.7-.36.62-2.7,4.68-.36.62-4,6.94-4-6.94-2.37,4.12-.69,1.19,4,6.93,3.06,5.31,3.06-5.31,4-6.93,3.06-5.31,6-10.31L57,22.64l3.78-6.54a5.15,5.15,0,0,1,8.93,5.15L62.91,33l-3.06,5.3-6,10.32-3.06,5.31-4,6.93-4.51,7.84a5.17,5.17,0,0,1-2.82,2.28l-.12,0a5.47,5.47,0,0,1-.7.16l-.34.06h-.49a5.23,5.23,0,0,1-.56,0l-.28,0a5.19,5.19,0,0,1-.76-.17l-.08,0a5.14,5.14,0,0,1-2.84-2.29l-4.52-7.84-4-6.93L22.45,58l-.7,1.2,7,12.11a10.45,10.45,0,0,0,9.07,5.24h0a10.46,10.46,0,0,0,9.08-5.24l7-12.11L57,53.89l6-10.32L66,38.26,74.25,23.9A10.47,10.47,0,0,0,70.42,9.62Z"/>
-                    <polygon class="cls-5" points="26.14 56.19 24.81 53.89 21.75 59.19 23.08 61.5 23.44 60.88 26.14 56.19"/>
-                    <polygon class="cls-6" points="30.76 43.57 32.09 45.87 32.45 45.26 35.15 40.57 33.82 38.26 30.76 43.57"/>
-                    <polygon class="cls-7" points="62.91 43.57 64.28 45.96 65.07 44.59 67.34 40.65 65.97 38.26 62.91 43.57"/>
-                    <polygon class="cls-8" points="58.33 56.28 56.95 53.89 53.89 59.2 55.27 61.58 56.06 60.21 58.33 56.28"/>
+                        d="M70.42,9.62a10.48,10.48,0,0,0-14.29,3.83l-1.88,3.26-.36.62L51.19,22l-.36.62-5.59,9.7-.36.62-2.7,4.68-.36.62-4,6.94-4-6.94-2.37,4.12-.69,1.19,4,6.93,3.06,5.31,3.06-5.31,4-6.93,3.06-5.31,6-10.31L57,22.64l3.78-6.54a5.15,5.15,0,0,1,8.93,5.15L62.91,33l-3.06,5.3-6,10.32-3.06,5.31-4,6.93-4.51,7.84a5.17,5.17,0,0,1-2.82,2.28l-.12,0a5.47,5.47,0,0,1-.7.16l-.34.06h-.49a5.23,5.23,0,0,1-.56,0l-.28,0a5.19,5.19,0,0,1-.76-.17l-.08,0a5.14,5.14,0,0,1-2.84-2.29l-4.52-7.84-4-6.93L22.45,58l-.7,1.2,7,12.11a10.45,10.45,0,0,0,9.07,5.24h0a10.46,10.46,0,0,0,9.08-5.24l7-12.11L57,53.89l6-10.32L66,38.26,74.25,23.9A10.47,10.47,0,0,0,70.42,9.62Z" />
+                    <polygon class="cls-5"
+                        points="26.14 56.19 24.81 53.89 21.75 59.19 23.08 61.5 23.44 60.88 26.14 56.19" />
+                    <polygon class="cls-6"
+                        points="30.76 43.57 32.09 45.87 32.45 45.26 35.15 40.57 33.82 38.26 30.76 43.57" />
+                    <polygon class="cls-7"
+                        points="62.91 43.57 64.28 45.96 65.07 44.59 67.34 40.65 65.97 38.26 62.91 43.57" />
+                    <polygon class="cls-8"
+                        points="58.33 56.28 56.95 53.89 53.89 59.2 55.27 61.58 56.06 60.21 58.33 56.28" />
                 </g>
             </g>
         </svg>
