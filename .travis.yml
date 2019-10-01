@@ -21,6 +21,10 @@ stages:
       if: branch = master
     - name: deploy-stage
       if: branch = master
+    - name: build-electron-prod
+      if: branch = master
+    - name: deploy-electron-prod
+      if: branch = master
 
     - name: build-preview
       if: branch = preview
@@ -132,3 +136,26 @@ jobs:
               - export AWS_SECRET_ACCESS_KEY=$PROD_AWS_SECRET_ACCESS_KEY
               - aws s3 rm s3://wallet.crypto-bridge.org/index.html
               - aws s3 sync ./build/dist/ s3://wallet.crypto-bridge.org/ --delete --exclude "assets/*"
+
+        - stage: build-electron-prod
+          script:
+              - export CSC_IDENTITY_AUTO_DISCOVERY=false
+              - npm run package-all
+
+        - stage: deploy-electron-prod
+          script:
+              - export GIT_USER="cryptobridge"
+              - export GIT_TOKEN=$PROD_GIT_TOKEN
+              - export GIT_REPOSITORY="cryptobridge-ui"
+              - export PACKAGE_VERSION=$(grep '"version"' package.json | cut -d '"' -f4)
+              - export ARTIFACT_PATH="build/binaries"
+              - export ARTIFACT_WIN="CryptoBridge-$PACKAGE_VERSION-Setup.exe"
+              - export ARTIFACT_MAC="CryptoBridge-$PACKAGE_VERSION.dmg"
+              - export ARTIFACT_LIN="CryptoBridge-$PACKAGE_VERSION-amd64.deb"
+              - ls -la $ARTIFACT_PATH
+              - |
+                  release=$(curl -XPOST -H "Authorization:token $GIT_TOKEN" --data "{\"tag_name\": \"v$PACKAGE_VERSION\", \"target_commitish\": \"master\", \"name\": \"v$PACKAGE_VERSION\", \"body\": \"\", \"draft\": false, \"prerelease\": false}" https://api.github.com/repos/$GIT_USER/$GIT_REPOSITORY/releases | grep '"upload_url"' | cut -d '"' -f4) #  | jq -r '.upload_url'
+              - upload_url="${release%\{*}"
+              - curl -XPOST -H "Authorization:token $GIT_TOKEN" -H "Content-Type:application/octet-stream" --data-binary @"$ARTIFACT_PATH/$ARTIFACT_WIN" $upload_url?name=$ARTIFACT_WIN
+              - curl -XPOST -H "Authorization:token $GIT_TOKEN" -H "Content-Type:application/octet-stream" --data-binary @"$ARTIFACT_PATH/$ARTIFACT_MAC" $upload_url?name=$ARTIFACT_MAC
+              - curl -XPOST -H "Authorization:token $GIT_TOKEN" -H "Content-Type:application/octet-stream" --data-binary @"$ARTIFACT_PATH/$ARTIFACT_LIN" $upload_url?name=$ARTIFACT_LIN
