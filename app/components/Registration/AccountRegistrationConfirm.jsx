@@ -36,8 +36,8 @@ class AccountRegistrationConfirm extends React.Component {
         super();
         this.state = {
             confirmedPassword: false,
-            confirmedTermsAndConditions: false,
-            confirmedDisclaimer: false,
+            confirmedTermsAndConditions: true,
+            confirmedDisclaimer: true,
             reCaptchaToken: null,
             loading: false
         };
@@ -224,6 +224,22 @@ class AccountRegistrationConfirm extends React.Component {
                     onChange={this.onFormChange}
                     recaptchaPayload={{user: this.props.accountName}}
                 />
+
+                <p>
+                    <Translate
+                        content="cryptobridge.registration.terms_and_conditions.hint"
+                        with={{
+                            cryptobridge_terms_and_conditions: (
+                                <a
+                                    href="https://crypto-bridge.org/terms-and-conditions"
+                                    target="_blank"
+                                >
+                                    <Translate content="cryptobridge.registration.terms_and_conditions.title" />
+                                </a>
+                            )
+                        }}
+                    />
+                </p>
                 {/*/ CRYPTOBRIDGE */}
 
                 <Form.Item>

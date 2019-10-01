@@ -2519,13 +2519,14 @@
             "terms_and_conditions": {
                 "title": "CryptoBridge terms and conditions",
                 "accept": "I have read and agree to the %(cryptobridge_terms_and_conditions)s.",
+                "hint": "By logging in, I agree to the %(cryptobridge_terms_and_conditions)s. I also renounce to my consumer right of revocation and acknowledge I can terminate the use of the service at anytime as described in §5.9 of CryptoBridge's Terms of Service.",
                 "disclaimer": "I hereby renounce to my consumer right of revocation and acknowledge I can terminate the use of the service at anytime as described in §5.9 of CryptoBridge's Terms of Service.",
                 "required": "Accepting the CryptoBridge Terms of Service is required.",
                 "open": "Open Terms of Service"
             },
             "user_verification": {
-                "required": "US citizens are required to submit user verification to use CryptoBridge",
-                "info": "To continue using the CryptoBridge gateway, US citizens must first submit verification of their identity. Proceeding with this requirement will redirect you to our partner, Fractal. Upon completion, full functionality of your account be restored.",
+                "required": "Starting October 2019, all users are required to submit user verification to use CryptoBridge.",
+                "info": "The 5th EU Anti-Money Laundering Directive requires users to submit verification of their identity to continue using CryptoBridge.<br><br>Proceeding with this requirement will redirect you to our partner, Fractal. Upon completion, full functionality of your account will be restored. The EU General Data Protection Regulation (GDPR) ensures that your privacy is protected at any time.<br><br>Find more about KYC <a href='https://crypto-bridge.org/2019/10/01/introducing-user-verification' target='_blank'>in our blog</a>.",
                 "start": "Start user verification",
                 "status": {
                     "pending": {
@@ -2565,7 +2566,7 @@
             "compliance": {
                 "info": "Please note:",
                 "terms": "Accepting the CryptoBridge Terms of Service is required.",
-                "user_verification": "US citizens are required to submit user verification to use CryptoBridge."
+                "user_verification": "You are required to submit user verification to use CryptoBridge."
             }
         },
         "earn": {

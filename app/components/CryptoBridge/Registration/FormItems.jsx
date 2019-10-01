@@ -117,9 +117,9 @@ export default class RegisterFormItems extends React.Component {
         super();
 
         this.state = {
-            usCitizen: null,
-            confirmedTermsAndConditions: false,
-            confirmedDisclaimer: false,
+            usCitizen: false,
+            confirmedTermsAndConditions: true,
+            confirmedDisclaimer: true,
             reCaptchaToken: null
         };
     }
@@ -171,20 +171,6 @@ export default class RegisterFormItems extends React.Component {
     render() {
         return (
             <div>
-                {this.props.citizenship ? (
-                    <Citizenship onChange={this.onCitizenShipChange} />
-                ) : null}
-
-                {this.props.terms ? (
-                    <TermsAndConditions
-                        onChange={this.onConfirmedTermsAndConditionsChange}
-                    />
-                ) : null}
-
-                {this.props.disclaimer ? (
-                    <Disclaimer onChange={this.onConfirmedDisclaimerChange} />
-                ) : null}
-
                 {this.props.recaptchaPayload ? (
                     <ReCAPTCHA
                         onChange={this.onRecaptchaChange}

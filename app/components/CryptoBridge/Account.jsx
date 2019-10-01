@@ -126,13 +126,13 @@ export class CryptoBridgeUser {
     }
 
     getIsUsCitizen() {
-        const {us_citizen} = this.me;
+        const {us_citizen} = false; // this.me;
 
         return us_citizen === true;
     }
 
     getRequiresUsCitizen() {
-        const {us_citizen} = this.me;
+        const {us_citizen} = false; // this.me;
 
         return typeof us_citizen !== "boolean";
     }
@@ -309,8 +309,11 @@ class CryptoBridgeAccount extends React.Component {
                         message: counterpart.translate(
                             "cryptobridge.registration.user_verification.required"
                         ),
-                        description: counterpart.translate(
-                            "cryptobridge.registration.user_verification.info"
+                        description: (
+                            <Translate
+                                content="cryptobridge.registration.user_verification.info"
+                                unsafe
+                            />
                         ),
                         btn: (
                             <Button

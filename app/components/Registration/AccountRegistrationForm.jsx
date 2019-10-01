@@ -34,7 +34,7 @@ class AccountRegistrationForm extends React.Component {
             loading: false,
             generatedPassword: `P${key.get_random_key().toWif()}`,
             confirmPassword: "",
-            usCitizen: null // CRYPTOBRIDGE
+            usCitizen: false // CRYPTOBRIDGE
         };
         this.onSubmit = this.onSubmit.bind(this);
         this.onRegistrarAccountChange = this.onRegistrarAccountChange.bind(
@@ -231,7 +231,6 @@ class AccountRegistrationForm extends React.Component {
                     </Form.Item>
 
                     {/* CRYPTOBRIDGE */}
-                    <Citizenship onChange={this.onUsCitizenChange} />
                     {/* /CRYPTOBRIDGE */}
 
                     {/*<span className="inline-label">*/}

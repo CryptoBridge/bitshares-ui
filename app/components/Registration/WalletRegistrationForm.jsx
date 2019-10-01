@@ -370,10 +370,26 @@ class WalletRegistrationForm extends React.Component {
 
                 {/* CRYPTOBRIDGE */}
                 <RegistrationFormItems
-                    citizenship={true}
+                    citizenship={false}
                     onChange={this.onFormChange}
                     recaptchaPayload={{user: this.props.accountName}}
                 />
+
+                <p>
+                    <Translate
+                        content="cryptobridge.registration.terms_and_conditions.hint"
+                        with={{
+                            cryptobridge_terms_and_conditions: (
+                                <a
+                                    href="https://crypto-bridge.org/terms-and-conditions"
+                                    target="_blank"
+                                >
+                                    <Translate content="cryptobridge.registration.terms_and_conditions.title" />
+                                </a>
+                            )
+                        }}
+                    />
+                </p>
                 {/*/ CRYPTOBRIDGE */}
 
                 {registrar && !isLTM ? (
