@@ -140,6 +140,7 @@ jobs:
         - stage: build-electron-prod
           script:
               - export CSC_IDENTITY_AUTO_DISCOVERY=false
+              - npm install
               - npm run package-all
 
         - stage: deploy-electron-prod
