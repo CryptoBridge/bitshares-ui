@@ -1,6 +1,6 @@
 {
     "name": "CryptoBridge",
-    "version": "0.2.14",
+    "version": "0.3.0",
     "description": "Advanced wallet interface for the BitShares financial blockchain.",
     "homepage": "https://github.com/CryptoBridge/cryptobridge-ui",
     "author": "BitShares UI Worker <ui-dev@bitshares.org>",
@@ -98,7 +98,8 @@
             "category": "public.app-category.finance"
         },
         "dmg": {
-            "contents": [{
+            "contents": [
+                {
                     "x": 130,
                     "y": 220
                 },
@@ -111,13 +112,15 @@
             ]
         },
         "win": {
-            "target": [{
-                "target": "nsis",
-                "arch": [
-                    "x64",
-                    "ia32"
-                ]
-            }],
+            "target": [
+                {
+                    "target": "nsis",
+                    "arch": [
+                        "x64",
+                        "ia32"
+                    ]
+                }
+            ],
             "artifactName": "${productName}-${version}-Setup.${ext}"
         },
         "linux": {
