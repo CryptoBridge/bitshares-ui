@@ -23,8 +23,6 @@ stages:
       if: branch = master
     - name: deploy-electron-prod
       if: branch = master
-    - name: deploy-electron-prod
-      if: branch = master
 
     - name: build-preview
       if: branch = preview
@@ -39,6 +37,8 @@ stages:
     - name: build-prod
       if: tag =~ /^v\d+\.\d+(\.\d+)?$/
     - name: deploy-prod
+      if: tag =~ /^v\d+\.\d+(\.\d+)?$/
+    - name: deploy-electron-prod
       if: tag =~ /^v\d+\.\d+(\.\d+)?$/
 
 jobs:
