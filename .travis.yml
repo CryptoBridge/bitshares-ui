@@ -138,6 +138,7 @@ jobs:
               - aws s3 sync ./build/dist/ s3://wallet.crypto-bridge.org/ --delete --exclude "assets/*"
 
         - stage: build-electron-prod
+          os: osx
           script:
               - export CSC_IDENTITY_AUTO_DISCOVERY=false
               - npm install
