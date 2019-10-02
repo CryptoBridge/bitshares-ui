@@ -1,5 +1,6 @@
 .DS_Store
 .idea
+.env
 */node_modules
 */npm-debug.log
 *.map
