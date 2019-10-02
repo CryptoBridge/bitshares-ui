@@ -140,6 +140,12 @@ jobs:
         - stage: deploy-electron-prod
           os: osx
           script:
+              - export RECAPTCHA_SITE_KEY=$PROD_RECAPTCHA_SITE_KEY
+              - export CRYPTOBRIDGE_PUB_KEY=$PROD_CRYPTOBRIDGE_PUB_KEY
+              - export CHAIN_ID=$PROD_CHAIN_ID
+              - export WALLET_URL=$PROD_WALLET_URL
+              - export API_URL=$PROD_API_URL
+              - export API_SUPPORT_URL=$PROD_API_SUPPORT_URL
               - export CSC_IDENTITY_AUTO_DISCOVERY=false
               - export GIT_USER="cryptobridge"
               - export GIT_TOKEN=$PROD_GIT_TOKEN
