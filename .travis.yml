@@ -21,8 +21,6 @@ stages:
       if: branch = master
     - name: deploy-stage
       if: branch = master
-    - name: deploy-electron-prod
-      if: branch = master
 
     - name: build-preview
       if: branch = preview
