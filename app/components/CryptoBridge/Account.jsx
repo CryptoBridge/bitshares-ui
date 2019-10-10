@@ -125,16 +125,8 @@ export class CryptoBridgeUser {
         return `${terms.latest.link}&theme=${theme}`;
     }
 
-    getIsUsCitizen() {
-        const {us_citizen} = false; // this.me;
-
-        return us_citizen === true;
-    }
-
     getRequiresUsCitizen() {
-        const {us_citizen} = false; // this.me;
-
-        return typeof us_citizen !== "boolean";
+        return false;
     }
 
     getRequiresDisclaimer() {
@@ -267,13 +259,26 @@ class CryptoBridgeAccount extends React.Component {
                                 citizenship={me.getRequiresUsCitizen()}
                                 disclaimer={me.getRequiresDisclaimer()}
                             />
+
+                            <Translate
+                                content="cryptobridge.registration.terms_and_conditions.confirm_hint"
+                                with={{
+                                    cryptobridge_terms_and_conditions: (
+                                        <a
+                                            href="https://crypto-bridge.org/terms-and-conditions"
+                                            target="_blank"
+                                        >
+                                            <Translate content="cryptobridge.registration.terms_and_conditions.title" />
+                                        </a>
+                                    )
+                                }}
+                            />
                         </Form>
                     ),
                     btn: (
                         <Button
                             type="primary"
                             size="small"
-                            disabled={!this.getActionFormIsValid()}
                             loading={actionNotificationConfirmLoading}
                             onClick={() => {
                                 this.handleActionNotificationConfirm(
@@ -367,16 +372,21 @@ class CryptoBridgeAccount extends React.Component {
 
     handleActionNotificationConfirm = notificationKey => {
         this.setState(
-            {actionNotificationConfirmLoading: true},
+            {
+                actionNotificationConfirmLoading: true,
+                actionNotificationForm: {
+                    usCitizen: null,
+                    confirmedTermsAndConditions: true,
+                    confirmedDisclaimer: true
+                }
+            },
             this.checkRequiredAccountActions
         );
 
         if (this.getActionFormIsValid()) {
-            const {
-                usCitizen,
-                confirmedDisclaimer,
-                confirmedTermsAndConditions
-            } = this.state.actionNotificationForm;
+            const usCitizen = false;
+            const confirmedDisclaimer = true;
+            const confirmedTermsAndConditions = true;
             const {me} = this.props;
 
             const terms_version = confirmedTermsAndConditions
@@ -416,25 +426,7 @@ class CryptoBridgeAccount extends React.Component {
     };
 
     getActionFormIsValid() {
-        const {actionNotificationForm} = this.state;
-        const {me} = this.props;
-
-        if (!actionNotificationForm) {
-            return false;
-        }
-
-        const {
-            usCitizen,
-            confirmedDisclaimer,
-            confirmedTermsAndConditions
-        } = actionNotificationForm;
-
-        return (
-            (typeof usCitizen === "boolean" || !me.getRequiresUsCitizen()) &&
-            (confirmedDisclaimer === true || !me.getRequiresDisclaimer()) &&
-            (confirmedTermsAndConditions === true ||
-                !me.getRequiresTermsAndConditions())
-        );
+        return true;
     }
 
     render() {

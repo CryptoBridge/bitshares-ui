@@ -377,7 +377,7 @@ class WalletRegistrationForm extends React.Component {
 
                 <p>
                     <Translate
-                        content="cryptobridge.registration.terms_and_conditions.hint"
+                        content="cryptobridge.registration.terms_and_conditions.login_hint"
                         with={{
                             cryptobridge_terms_and_conditions: (
                                 <a

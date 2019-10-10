@@ -2519,7 +2519,8 @@
             "terms_and_conditions": {
                 "title": "CryptoBridge terms and conditions",
                 "accept": "I have read and agree to the %(cryptobridge_terms_and_conditions)s.",
-                "hint": "By logging in, I agree to the %(cryptobridge_terms_and_conditions)s. I also renounce to my consumer right of revocation and acknowledge I can terminate the use of the service at anytime as described in §5.9 of CryptoBridge's Terms of Service.",
+                "login_hint": "By logging in, I agree to the %(cryptobridge_terms_and_conditions)s. I also renounce to my consumer right of revocation and acknowledge I can terminate the use of the service at anytime as described in §5.9 of CryptoBridge's Terms of Service.",
+                "confirm_hint": "By confirming, I agree to the %(cryptobridge_terms_and_conditions)s. I also renounce to my consumer right of revocation and acknowledge I can terminate the use of the service at anytime as described in §5.9 of CryptoBridge's Terms of Service.",
                 "disclaimer": "I hereby renounce to my consumer right of revocation and acknowledge I can terminate the use of the service at anytime as described in §5.9 of CryptoBridge's Terms of Service.",
                 "required": "Accepting the CryptoBridge Terms of Service is required.",
                 "open": "Open Terms of Service"
