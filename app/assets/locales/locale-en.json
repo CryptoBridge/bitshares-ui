@@ -2529,7 +2529,7 @@
                 "required": "Starting October 2019, all users are required to submit user verification to use CryptoBridge.",
                 "info": "The 5th EU Anti-Money Laundering Directive requires users to submit verification of their identity to continue using CryptoBridge.<br><br>Proceeding with this requirement will redirect you to our partner, Fractal. Upon completion, full functionality of your account will be restored. The EU General Data Protection Regulation (GDPR) ensures that your privacy is protected at any time.<br><br>Find more about KYC <a href='https://crypto-bridge.org/2019/10/01/introducing-user-verification' target='_blank'>in our blog</a>.",
                 "start": "Start user verification",
-                "check": "Check verification status with fractal",
+                "check": "Check verification status",
                 "status": {
                     "pending": {
                         "title": "Awaiting user verification by Fractal",

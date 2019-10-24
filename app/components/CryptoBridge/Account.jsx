@@ -297,7 +297,9 @@ class CryptoBridgeAccount extends React.Component {
             // USER VERIFICATION
             if (me.getRequiresUserVerification()) {
                 if (me.getUserVerificationIsPending()) {
+                    const userVerficationModalKey = "userVerficationModal";
                     Notification.info({
+                        key: userVerficationModalKey,
                         message: counterpart.translate(
                             "cryptobridge.registration.user_verification.status.pending.title"
                         ),
