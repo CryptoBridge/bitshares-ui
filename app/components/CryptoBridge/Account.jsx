@@ -304,6 +304,18 @@ class CryptoBridgeAccount extends React.Component {
                         description: counterpart.translate(
                             "cryptobridge.registration.user_verification.status.pending.info"
                         ),
+                        btn: (
+                            <Button
+                                type="primary"
+                                size="small"
+                                onClick={() => {
+                                    Notification.close(userVerficationModalKey);
+                                    this.openUserVerificationProvider();
+                                }}
+                            >
+                                <Translate content="cryptobridge.registration.user_verification.check" />
+                            </Button>
+                        ),
                         duration: 0,
                         placement: "bottomRight"
                     });
