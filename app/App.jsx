@@ -18,7 +18,12 @@ import Incognito from "./components/Layout/Incognito";
 import {isIncognito} from "feature_detect";
 import {updateGatewayBackers} from "common/gatewayUtils";
 import titleUtils from "common/titleUtils";
-import {BodyClassName, Notification} from "bitshares-ui-style-guide";
+import {
+    BodyClassName,
+    Notification,
+    Alert,
+    Icon
+} from "bitshares-ui-style-guide";
 import {DEFAULT_NOTIFICATION_DURATION} from "services/Notification";
 import Loadable from "react-loadable";
 import Borrow from "./components/Showcases/Borrow";
@@ -154,7 +159,8 @@ class App extends React.Component {
             syncFail,
             incognito: false,
             incognitoWarningDismissed: false,
-            height: window && window.innerHeight
+            height: window && window.innerHeight,
+            newsVisible: true
         };
 
         this._rebuildTooltips = this._rebuildTooltips.bind(this);
@@ -347,6 +353,11 @@ class App extends React.Component {
     //     this.refs.notificationSystem.addNotification(params);
     // }
 
+    onClose() {
+        console.log("Setting news invisible");
+        this.setState({newsVisible: false});
+    }
+
     render() {
         let {incognito, incognitoWarningDismissed} = this.state;
         let {walletMode, theme, location, match, ...others} = this.props;
@@ -368,6 +379,7 @@ class App extends React.Component {
             let accountName =
                 AccountStore.getState().currentAccount ||
                 AccountStore.getState().passwordAccount;
+
             accountName =
                 accountName && accountName !== "null"
                     ? accountName
@@ -520,6 +532,34 @@ class App extends React.Component {
                 </div>
             );
         }
+        const message = (
+            <span>
+                We now offer the lowest trading fees and the best referral
+                commission in the industry. Learn more{" "}
+                <a
+                    target="_blank"
+                    className="external-link"
+                    rel="noopener noreferrer"
+                    href="https://crypto-bridge.org/start-trading/"
+                >
+                    here
+                </a>
+                !
+                <Icon
+                    type="close"
+                    style={{
+                        position: "absolute",
+                        top: "8px",
+                        right: "16px",
+                        overflow: "hidden",
+                        "font-size": "12px",
+                        "line-height": "22px",
+                        cursor: "pointer"
+                    }}
+                    onClick={this.onClose.bind(this)}
+                />
+            </span>
+        );
 
         return (
             <div
@@ -535,7 +575,16 @@ class App extends React.Component {
                         />
                     ) : null}
                     <div id="content-wrapper">
-                        {content}
+                        {this.state.newsVisible ? (
+                            <Alert
+                                id={"cb_alert"}
+                                key={"cb_alert"}
+                                type={"warning"}
+                                message={message}
+                                showIcon={true}
+                            />
+                        ) : null}
+                        >{content}
                         <NotificationSystem
                             ref="notificationSystem"
                             allowHTML={true}
