@@ -584,7 +584,7 @@ class App extends React.Component {
                                 showIcon={true}
                             />
                         ) : null}
-                        >{content}
+                        {content}
                         <NotificationSystem
                             ref="notificationSystem"
                             allowHTML={true}
