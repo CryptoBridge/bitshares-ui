@@ -78,11 +78,11 @@ module.exports = function(env) {
 
     const chainId =
         process.env.CHAIN_ID ||
-        "92e31f3a1e262c773eb2d3d7741b0d7a75ff91ded998759fb1611014d9310378";
+        "6847b2f6e1b52cee660d748f70565bd3248c4498f7b208fbf15e63e93b3e1eb6";
 
     const isLocalChain =
         chainId ===
-        "92e31f3a1e262c773eb2d3d7741b0d7a75ff91ded998759fb1611014d9310378";
+        "6847b2f6e1b52cee660d748f70565bd3248c4498f7b208fbf15e63e93b3e1eb6";
 
     const walletUrl = process.env.WALLET_URL || "http://localhost:8080";
     const apiUrl = process.env.API_URL || "http://localhost:5000";
@@ -117,7 +117,7 @@ module.exports = function(env) {
             __IS_LOCAL_CHAIN__: isLocalChain,
 
             __CHAIN_ID_LOCAL__: JSON.stringify(
-                "92e31f3a1e262c773eb2d3d7741b0d7a75ff91ded998759fb1611014d9310378"
+                "6847b2f6e1b52cee660d748f70565bd3248c4498f7b208fbf15e63e93b3e1eb6"
             ),
             __CHAIN_ID_TEST__: JSON.stringify(
                 "2821abbb9923c830cf8300136c431674756270d9019f56c00e80b296e3afc079"
