@@ -16,7 +16,7 @@ export default class ReferralProgram extends React.Component {
                         <Paragraph>
                             We are pleased to announce the launch of the
                             referral program for CryptoBridge users! This begins
-                            Nov 13, 2019 00:00 UTC and it will end on Nov 21,
+                            Nov 20, 2019 00:00 UTC and it will end on Nov 27,
                             00:00 UTC. Depending on the feedback we receive from
                             the community, we may renew the program.
                         </Paragraph>
@@ -24,7 +24,7 @@ export default class ReferralProgram extends React.Component {
                         <Paragraph>
                             Payouts do happen after a full program period has
                             passed (meaning the next payment will arrive 7 days
-                            after Nov 13). On Nov 20, 2019 the payout will be
+                            after Nov 20). On Nov 27, 2019 the payout will be
                             complete. The payment duration is 3 months, meaning
                             you will be paid for a 3 month duration after a
                             user’s signup.
