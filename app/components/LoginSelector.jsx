@@ -146,17 +146,6 @@ class LoginSelector extends React.Component {
 
                         <div className="grid-block account-login-options">
                             <Link
-                                id="account_register_button"
-                                to="/create-account"
-                                className="button primary"
-                                data-intro={translator.translate(
-                                    "walkthrough.create_cloud_wallet"
-                                )}
-                            >
-                                <Translate content="header.create_account" />
-                            </Link>
-
-                            <Link
                                 id="account_login_button"
                                 to="/login"
                                 className="button hollow primary"

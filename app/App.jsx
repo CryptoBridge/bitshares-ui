@@ -414,21 +414,6 @@ class App extends React.Component {
                                 <Route path="/settings" component={Settings} />
 
                                 <Route path="/login" component={Login} />
-                                <Route
-                                    path="/create-account"
-                                    exact
-                                    component={RegistrationSelector}
-                                />
-                                <Route
-                                    path="/create-account/local"
-                                    exact
-                                    component={WalletRegistration}
-                                />
-                                <Route
-                                    path="/create-account/cloud"
-                                    exact
-                                    component={AccountRegistration}
-                                />
                                 <Route path="/news" exact component={News} />
                                 <Redirect
                                     path={"/voting"}
@@ -443,9 +428,6 @@ class App extends React.Component {
                                 {/*component={Benchmark}*/}
                                 {/*/>*/}
                                 <Route path="/support" component={Support} />
-                                <Route path="/earn" component={Earn} />
-                                {/* /CRYPTOBRIDGE*/}
-
                                 {/* Explorer routes */}
                                 <Route
                                     path="/explorer/:tab"
@@ -534,17 +516,16 @@ class App extends React.Component {
         }
         const message = (
             <span>
-                We now offer the lowest trading fees and the best referral
-                commission in the industry. Learn more{" "}
+                CryptoBridge is shutting down. Please withdraw your funds until
+                December 15 23:59 GMT.{" "}
                 <a
                     target="_blank"
                     className="external-link"
                     rel="noopener noreferrer"
-                    href="https://crypto-bridge.org/start-trading/"
+                    href="https://crypto-bridge.org/"
                 >
-                    here
+                    More details
                 </a>
-                !
                 <Icon
                     type="close"
                     style={{
