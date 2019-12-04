@@ -138,7 +138,7 @@ jobs:
         - stage: deploy-electron-prod
           os: osx
           script:
-              - export RECAPTCHA_SITE_KEY=$PROD_RECAPTCHA_SITE_KEY
+              - export RECAPTCHA_SITE_KEY=$PROD_RECAPTCHA_ELECTRON_SITE_KEY
               - export CRYPTOBRIDGE_PUB_KEY=$PROD_CRYPTOBRIDGE_PUB_KEY
               - export CHAIN_ID=$PROD_CHAIN_ID
               - export WALLET_URL=$PROD_WALLET_URL
